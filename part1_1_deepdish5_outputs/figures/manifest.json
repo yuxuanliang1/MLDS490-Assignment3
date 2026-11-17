@@ -1,0 +1,46 @@
+[
+  {
+    "name": "overall_class_distribution",
+    "description": "Pre-split development pool only; no held-out test labels"
+  },
+  {
+    "name": "five_client_distributions",
+    "description": "Systematic selection by size extremes, diversity extremes, and median profile"
+  },
+  {
+    "name": "client_class_heatmap",
+    "description": "Row-normalized class frequencies retain original user boundaries"
+  },
+  {
+    "name": "baseline_convergence",
+    "description": "Entire aggregate train/validation partitions after every updated global model; includes round zero"
+  },
+  {
+    "name": "hyperparameter_accuracy",
+    "description": "Six controlled configurations, common split/initialization/LR/batch/80-round budget"
+  },
+  {
+    "name": "accuracy_vs_client_epochs",
+    "description": "Equal rounds have different computation: 160 to 2400 client-epochs"
+  },
+  {
+    "name": "seed_stability",
+    "description": "Pointwise sample SD across seeds; not a confidence interval"
+  },
+  {
+    "name": "participation_heterogeneity_benefit",
+    "description": "Baseline original clients: final round minus round zero; observational associations only"
+  },
+  {
+    "name": "participation_histogram",
+    "description": "Actual baseline selections, 800 total client participations"
+  },
+  {
+    "name": "scientific_controls",
+    "description": "Matched controlled interventions; development/synthetic data only"
+  },
+  {
+    "name": "pilot_learning_rates",
+    "description": "Shared LR selected by mean round-12 validation across E=1 and E=3"
+  }
+]

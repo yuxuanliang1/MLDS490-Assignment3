@@ -1,0 +1,22 @@
+{
+  "mode": "cpu",
+  "rounds": 5,
+  "seed": 2026,
+  "epochs": 3,
+  "lr": 0.3,
+  "batch_size": 32,
+  "clients_per_round": 4,
+  "best_validation": 0.4282815670360543,
+  "best_round": 5,
+  "final_metrics": {
+    "train_loss": 2.402056239067556,
+    "train_accuracy": 0.43276418286253837,
+    "train_n": 25418,
+    "validation_loss": 2.422000563496339,
+    "validation_accuracy": 0.4282815670360543,
+    "validation_n": 6407
+  },
+  "elapsed_seconds": 17.200862125959247,
+  "ray_startup_seconds": 3.356394909089431,
+  "split_sha256": "d28950c5a5e41dbfbf526bedd75d3dfae198cbbdca439c88938995f8b6f0ccc9"
+}

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "check_count": 362,
+  "errors": [],
+  "tex_files": 12,
+  "unique_figure_assets": 20,
+  "numbered_figure_environments": 20,
+  "subfigures": 0,
+  "numbered_tables": 14,
+  "bibliography_entries": 7,
+  "labels": 61,
+  "compilation_performed": false,
+  "limitation": "Static source checks do not establish successful compilation, page count, float placement, or absence of overfull boxes."
+}

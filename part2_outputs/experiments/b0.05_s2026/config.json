@@ -1,0 +1,12 @@
+{
+  "b": 0.05,
+  "seed": 2026,
+  "rounds": 80,
+  "epochs": 3,
+  "lr": 0.3,
+  "batch_size": 32,
+  "fraction": 0.1,
+  "device": "cuda:0",
+  "convention": "fixed",
+  "tag": "original_users"
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "mode": "sequential",
+    "repetitions": 3,
+    "mean_round_seconds": 0.033423768278832235,
+    "sd_round_seconds": 0.0017267270298000617,
+    "warm_mean_seconds": 0.03248286049347371,
+    "runtime_startup_seconds": 0,
+    "end_to_end_three_round_seconds": 0.10027130483649671,
+    "mean_actor_startup_seconds": 0.0,
+    "mean_cleanup_seconds": 0.0,
+    "mean_aggregation_seconds": 0.0009660843449334303,
+    "speedup_vs_sequential_CPU": 1.0
+  },
+  {
+    "mode": "cpu",
+    "repetitions": 3,
+    "mean_round_seconds": 3.0079399672492095,
+    "sd_round_seconds": 0.41717936793778077,
+    "warm_mean_seconds": 3.2476358498679474,
+    "runtime_startup_seconds": 5.110844713170081,
+    "end_to_end_three_round_seconds": 14.13466461491771,
+    "mean_actor_startup_seconds": 2.4297429299913347,
+    "mean_cleanup_seconds": 0.08442355738952756,
+    "mean_aggregation_seconds": 0.001225293070698778,
+    "speedup_vs_sequential_CPU": 0.011111846859563025
+  },
+  {
+    "mode": "cuda:0",
+    "repetitions": 3,
+    "mean_round_seconds": 4.114887667276586,
+    "sd_round_seconds": 0.6929158433193267,
+    "warm_mean_seconds": 3.71499062795192,
+    "runtime_startup_seconds": 3.340359713183716,
+    "end_to_end_three_round_seconds": 15.685022715013474,
+    "mean_actor_startup_seconds": 2.761063417963063,
+    "mean_cleanup_seconds": 0.22540057403966784,
+    "mean_aggregation_seconds": 0.0011680133951207001,
+    "speedup_vs_sequential_CPU": 0.00812264415979879
+  }
+]

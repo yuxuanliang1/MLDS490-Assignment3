@@ -1,0 +1,34 @@
+[
+  {
+    "name": "dp_accuracy_convergence",
+    "description": "Clean train/validation curves for b=0 and b=0.1; includes round zero"
+  },
+  {
+    "name": "dp_loss_convergence",
+    "description": "Clean train/validation curves for b=0 and b=0.1; includes round zero"
+  },
+  {
+    "name": "dp_accuracy_vs_noise_scale",
+    "description": "Both curves use each configuration's round-80 checkpoint; no best/final checkpoint mixing"
+  },
+  {
+    "name": "dp_noise_seed_stability",
+    "description": "All three prespecified seeds are reported; sample SD is not a confidence interval"
+  },
+  {
+    "name": "dp_noise_distribution_validation",
+    "description": "Moment, quantile and tail criteria use sampling uncertainty; histograms show the normalized central range"
+  },
+  {
+    "name": "dp_image_perturbations",
+    "description": "First four saved training indices of client 0; positive raw-image noise is applied before 1-X transformation"
+  },
+  {
+    "name": "dp_client_robustness_heatmap",
+    "description": "Non-standard client-level utility diagnostic; ordering uses training-label entropy, not test data"
+  },
+  {
+    "name": "dp_privacy_utility_tradeoff",
+    "description": "Noise magnitude is not epsilon; recommendation uses validation utility only"
+  }
+]

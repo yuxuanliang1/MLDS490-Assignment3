@@ -1,0 +1,11 @@
+{
+  "rounds": 25,
+  "fraction": 0.1,
+  "epochs": 1,
+  "lr": 0.0001,
+  "batch_size": 16,
+  "seed": 402,
+  "device": "cuda:0",
+  "split_sha256": "synthetic-seed-802",
+  "data_tag": "synthetic_spatial_binary"
+}

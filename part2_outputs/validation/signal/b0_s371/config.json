@@ -1,0 +1,12 @@
+{
+  "b": 0.0,
+  "seed": 371,
+  "rounds": 30,
+  "epochs": 1,
+  "lr": 0.1,
+  "batch_size": 16,
+  "fraction": 0.1,
+  "device": "cuda:0",
+  "convention": "fixed",
+  "tag": "synthetic_spatial_signal"
+}

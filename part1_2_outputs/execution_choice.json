@@ -1,0 +1,4 @@
+{
+  "mode": "cpu",
+  "rule": "Lower median complete actor-round time over three repetitions; correctness and GPU feasibility required"
+}

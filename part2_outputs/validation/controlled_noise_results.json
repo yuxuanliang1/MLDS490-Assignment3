@@ -1,0 +1,56 @@
+[
+  {
+    "seed": 371,
+    "b": 0.0,
+    "validation": 1.0,
+    "finite": true
+  },
+  {
+    "seed": 371,
+    "b": 0.2,
+    "validation": 1.0,
+    "finite": true
+  },
+  {
+    "seed": 371,
+    "b": 2.0,
+    "validation": 1.0,
+    "finite": true
+  },
+  {
+    "seed": 372,
+    "b": 0.0,
+    "validation": 1.0,
+    "finite": true
+  },
+  {
+    "seed": 372,
+    "b": 0.2,
+    "validation": 1.0,
+    "finite": true
+  },
+  {
+    "seed": 372,
+    "b": 2.0,
+    "validation": 1.0,
+    "finite": true
+  },
+  {
+    "seed": 373,
+    "b": 0.0,
+    "validation": 1.0,
+    "finite": true
+  },
+  {
+    "seed": 373,
+    "b": 0.2,
+    "validation": 1.0,
+    "finite": true
+  },
+  {
+    "seed": 373,
+    "b": 2.0,
+    "validation": 1.0,
+    "finite": true
+  }
+]

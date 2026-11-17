@@ -1,0 +1,19 @@
+\section{Three-Month Extended Validation Plan}\label{sec:plan}
+The following proposed work targets the statistical, systems, and privacy gaps. Protocols would be fixed before evaluation, with a new untouched test source reserved for final confirmation.
+
+\subsection{Month 1: statistical and algorithmic validation}
+The first question is whether the observed configuration ordering and mild-noise utility loss persist beyond three seeds. Repeat paired comparisons over 10--20 seeds, then vary client splits separately. Report paired accuracy differences and uncertainty intervals, using client-cluster resampling for client-level outcomes. This separates optimization variability from data variability.
+
+To distinguish improved optimization from additional computation, compare $(C,E)$ settings at both fixed communication rounds and fixed sample exposures or SGD steps. Cross learning rate with local epochs and a prespecified decay schedule. Measure time and communication proxy to a validation target, final accuracy, and local-update disagreement.
+
+Replace the ceiling-limited signal task with varying signal amplitude, class separation, and informative-pixel counts. Independently manipulate client-size imbalance, label skew, and feature shift. Learning curves, rare-class recall, and excess error would reveal where perturbation or heterogeneity begins to impair learning.
+
+\subsection{Month 2: parallel scalability and systems experiments}
+Determine when local computation amortizes Actor overhead by varying model size, examples per client, participation, and local epochs under fixed resource budgets. Use at least ten independent Ray sessions per workload, timing startup, serialization, computation, synchronization, evaluation, and cleanup separately. Report speedup, time to target accuracy, CPU-seconds, peak memory, and the workload at which speedup exceeds one.
+
+Compare ephemeral and persistent Actors under matched numerical controls; persistent Actors would be an extension, not a replacement for the assignment-required lifecycle. On isolated multi-node jobs, measure actual transferred bytes and latency under controlled bandwidth and delay. Test worker termination, driver restart, bounded memory pressure, and network disconnection. Recovery time, parameter agreement, duplicate/missing updates, and surviving processes would assess correctness beyond injected exceptions.
+
+\subsection{Month 3: formal privacy analysis and robustness}
+Define image- and writer-level adjacency, contribution bounds, the adversary's observations, and every model/metric release. Derive sensitivity and privacy accounting for fixed and resampled perturbations, then compare alternative local mechanisms and calibrated gradient/update perturbation under explicit trust assumptions. Validate the accountant independently and report utility against formal privacy budgets.
+
+Complement the analysis with prespecified membership-inference and reconstruction tests, measuring attack AUC or low-false-positive-rate advantage and reconstruction error alongside classification utility. Attack failure would not constitute a privacy proof. Finally, introduce highly non-IID and adversarial clients to measure worst-client accuracy, rare-class recall, and rejection rates, separating robustness to malicious updates from privacy protection.

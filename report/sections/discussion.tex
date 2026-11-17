@@ -1,0 +1,50 @@
+\section{Limitations and Scope of Interpretation}\label{sec:discussion}
+The headline results use different protocols. Part 1.1 selects a seed and checkpoint with ten clients per round, whereas Part 1.2 uses four clients and selects round 78. Their 74.12\% and 73.79\% test accuracies therefore do not isolate a Ray effect; the matched four-client CPU comparison has zero metric difference. Part 2 reports three-seed round-80 means. Its appropriate clean comparator is 73.38\%, giving a 0.72-point mean test-accuracy decrease at $b=0.05$.
+
+\Cref{tab:headlines} summarizes the headline results and their evaluation protocols, while \cref{tab:validation_summary} highlights the principal scientific validation evidence across the three parts.
+
+\begin{table}[!htbp]
+\centering
+\caption{Headline outcomes with their evaluation protocols. The rows are descriptive summaries, not a controlled ranking of methods.}\label{tab:headlines}
+\begin{tabularx}{\linewidth}{lYrY}
+\toprule
+Part & Method & Test accuracy & Protocol\\
+\midrule
+1.1 & Sequential FedAvg; ten clients/round & 74.12\% & Validation-selected seed 2026, round 80\\
+1.2 & Ray CPU FedAvg; four clients/round & 73.79\% & Seed 2026, validation-selected round 78\\
+2 & Sequential FedAvg + Laplace $b=0.05$ & 72.66\% & Mean round-80 accuracy over three seeds\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+
+\FloatBarrier
+\paragraph{Statistical scope.}
+The MLP, fixed learning rate, and 80-round budget define the tested regime. Three seeds characterize optimization variation on one split, not uncertainty across new writer populations; sample SDs are not confidence intervals. Selecting both settings and seeds on validation introduces selection optimism. Local validation estimates are coarse: one example changes client 25's accuracy by $100/24=4.17$ points. Class imbalance can obscure rare-label errors, and the aggregate test file does not establish writer-disjointness. Further tuning requires a new untouched test source.
+
+\paragraph{Interpretation of controls.}
+Partition reallocation holds sizes and exposures fixed but changes both label composition and assigned images, so the effect is not attributable to entropy alone. Client-benefit correlations are observational. Sampling frequencies and pixel correlations are finite diagnostics, not proofs of uniformity or independence; their thresholds use approximate sampling variation. The synthetic noise task is ceiling-limited, while extreme-noise tests cover one local workload. These limitations motivate the more discriminating controls in \cref{sec:plan}.
+
+\begin{samepage}
+\paragraph{Systems and privacy scope.}
+Exact replay applies to the matched software/device environment. GPU equivalence covers one round; timings use three repeats on a shared host, and longer-term memory behavior is untested. Injected failures verify defined recovery paths rather than physical outages or arbitrary checkpoint-write failures. Shared-machine client separation does not establish network or filesystem security. The full privacy limitation is developed in \cref{sec:privacy}; utility and distortion measurements alone do not supply a formal DP guarantee.
+\par
+\end{samepage}
+
+\begin{table}[!htbp]
+\centering
+\caption{Scientific validation across the three parts. The detailed experiments distinguish algebraic checks, controlled learning interventions, execution measurements, and stochastic diagnostics.}\label{tab:validation_summary}
+\begin{tabularx}{\linewidth}{lYYY}
+\toprule
+Part & Validation question & Experiment & Main quantitative evidence\\
+\midrule
+1.1 & Are aggregation and local optimization correct? & Unequal-count average; one full-batch step versus centralized SGD & Errors $2.38\times10^{-7}$ and $7.45\times10^{-9}$\\
+1.1 & Does learning respond to task structure? & Matched label randomization and partition interventions & Correct/shuffled: 66.36/7.65\%; homogeneous/segregated: 69.88/27.81\%\\
+1.2 & Does Ray preserve the algorithm and run concurrently? & Matched 80-round trajectories; process intervals and cleanup & Parameter/metric differences 0.0; four overlapping Actors in 80/80 rounds\\
+1.2 & Is parallel execution efficient? & Full matched workload, including startup and I/O & 11.95 s serial; 276.14 s Ray; speedup $0.0433\times$\\
+2 & Does noise follow the specified law? & One million draws per scale; pixel-correlation checks & Variance 0.019973 versus 0.020000 at $b=0.1$; max $|r|=0.0206$\\
+2 & Does perturbation preserve the clean baseline? & Full zero-noise replay at three seeds & All metrics, selections, and final parameters agree exactly\\
+\bottomrule
+\end{tabularx}
+\end{table}
+\FloatBarrier

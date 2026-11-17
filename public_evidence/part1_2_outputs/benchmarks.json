@@ -1,0 +1,407 @@
+[
+  {
+    "mode": "cpu",
+    "repetition": 0,
+    "wall_seconds": 2.5285482020117342,
+    "ray_startup_seconds": 5.110844713170081,
+    "round": 1,
+    "startup_seconds": 1.9193038099911064,
+    "cleanup_seconds": 0.0841646830085665,
+    "aggregation_seconds": 0.0012036331463605165,
+    "total_seconds": 2.526827964000404,
+    "placements": [
+      {
+        "pid": 840183,
+        "created": 1794891360.3323195,
+        "cid": 25,
+        "visible": "<device-uuid>",
+        "gpu_ids": [],
+        "gpu": null,
+        "rss": 995704832,
+        "torch_threads": 1
+      },
+      {
+        "pid": 840182,
+        "created": 1794891360.304083,
+        "cid": 67,
+        "visible": "<device-uuid>",
+        "gpu_ids": [],
+        "gpu": null,
+        "rss": 997765120,
+        "torch_threads": 1
+      },
+      {
+        "pid": 840185,
+        "created": 1794891360.3050687,
+        "cid": 16,
+        "visible": "<device-uuid>",
+        "gpu_ids": [],
+        "gpu": null,
+        "rss": 994144256,
+        "torch_threads": 1
+      },
+      {
+        "pid": 840184,
+        "created": 1794891360.3063908,
+        "cid": 36,
+        "visible": "<device-uuid>",
+        "gpu_ids": [],
+        "gpu": null,
+        "rss": 993255424,
+        "torch_threads": 1
+      }
+    ],
+    "aggregation_start": 1794891361.6961749,
+    "aggregation_finish": 1794891361.6973798,
+    "available_cpus": 4.0,
+    "driver_rss": 1233354752,
+    "live_actor_pids": 0
+  },
+  {
+    "mode": "cpu",
+    "repetition": 1,
+    "wall_seconds": 3.2066934928297997,
+    "ray_startup_seconds": 5.110844713170081,
+    "round": 1,
+    "startup_seconds": 2.654755007941276,
+    "cleanup_seconds": 0.08402638603001833,
+    "aggregation_seconds": 0.0012313560582697392,
+    "total_seconds": 3.2058835700154305,
+    "placements": [
+      {
+        "pid": 840453,
+        "created": 1794891363.727737,
+        "cid": 25,
+        "visible": "<device-uuid>",
+        "gpu_ids": [],
+        "gpu": null,
+        "rss": 1003823104,
+        "torch_threads": 1
+      },
+      {
+        "pid": 840451,
+        "created": 1794891363.7188656,
+        "cid": 67,
+        "visible": "<device-uuid>",
+        "gpu_ids": [],
+        "gpu": null,
+        "rss": 998985728,
+        "torch_threads": 1
+      },
+      {
+        "pid": 840450,
+        "created": 1794891363.7195566,
+        "cid": 16,
+        "visible": "<device-uuid>",
+        "gpu_ids": [],
+        "gpu": null,
+        "rss": 1000456192,
+        "torch_threads": 1
+      },
+      {
+        "pid": 840452,
+        "created": 1794891363.719854,
+        "cid": 36,
+        "visible": "<device-uuid>",
+        "gpu_ids": [],
+        "gpu": null,
+        "rss": 1000280064,
+        "torch_threads": 1
+      }
+    ],
+    "aggregation_start": 1794891364.9969673,
+    "aggregation_finish": 1794891364.9981995,
+    "available_cpus": 4.0,
+    "driver_rss": 1234481152,
+    "live_actor_pids": 0
+  },
+  {
+    "mode": "cpu",
+    "repetition": 2,
+    "wall_seconds": 3.288578206906095,
+    "ray_startup_seconds": 5.110844713170081,
+    "round": 1,
+    "startup_seconds": 2.715169972041622,
+    "cleanup_seconds": 0.08507960312999785,
+    "aggregation_seconds": 0.0012408900074660778,
+    "total_seconds": 3.2877782380674034,
+    "placements": [
+      {
+        "pid": 840708,
+        "created": 1794891366.9464927,
+        "cid": 25,
+        "visible": "<device-uuid>",
+        "gpu_ids": [],
+        "gpu": null,
+        "rss": 1001709568,
+        "torch_threads": 1
+      },
+      {
+        "pid": 840706,
+        "created": 1794891366.899012,
+        "cid": 67,
+        "visible": "<device-uuid>",
+        "gpu_ids": [],
+        "gpu": null,
+        "rss": 998150144,
+        "torch_threads": 1
+      },
+      {
+        "pid": 840705,
+        "created": 1794891366.929018,
+        "cid": 16,
+        "visible": "<device-uuid>",
+        "gpu_ids": [],
+        "gpu": null,
+        "rss": 998199296,
+        "torch_threads": 1
+      },
+      {
+        "pid": 840707,
+        "created": 1794891366.962853,
+        "cid": 36,
+        "visible": "<device-uuid>",
+        "gpu_ids": [],
+        "gpu": null,
+        "rss": 1002364928,
+        "torch_threads": 1
+      }
+    ],
+    "aggregation_start": 1794891368.2854366,
+    "aggregation_finish": 1794891368.2866783,
+    "available_cpus": 4.0,
+    "driver_rss": 1234653184,
+    "live_actor_pids": 0
+  },
+  {
+    "mode": "cuda:0",
+    "repetition": 0,
+    "wall_seconds": 4.914681745925918,
+    "ray_startup_seconds": 3.340359713183716,
+    "round": 1,
+    "startup_seconds": 2.212328976020217,
+    "cleanup_seconds": 0.24459664709866047,
+    "aggregation_seconds": 0.001245375955477357,
+    "total_seconds": 4.913533465005457,
+    "placements": [
+      {
+        "pid": 842220,
+        "created": 1794891386.669288,
+        "cid": 25,
+        "visible": "<device-uuid>",
+        "gpu_ids": [
+          "<device-uuid>"
+        ],
+        "gpu": "NVIDIA GeForce RTX 5060 Ti",
+        "rss": 1168822272,
+        "torch_threads": 1
+      },
+      {
+        "pid": 842218,
+        "created": 1794891386.5988293,
+        "cid": 67,
+        "visible": "<device-uuid>",
+        "gpu_ids": [
+          "<device-uuid>"
+        ],
+        "gpu": "NVIDIA GeForce RTX 5060 Ti",
+        "rss": 1177112576,
+        "torch_threads": 1
+      },
+      {
+        "pid": 842219,
+        "created": 1794891386.6735554,
+        "cid": 16,
+        "visible": "<device-uuid>",
+        "gpu_ids": [
+          "<device-uuid>"
+        ],
+        "gpu": "NVIDIA GeForce RTX 5060 Ti",
+        "rss": 1173082112,
+        "torch_threads": 1
+      },
+      {
+        "pid": 842221,
+        "created": 1794891386.6777692,
+        "cid": 36,
+        "visible": "<device-uuid>",
+        "gpu_ids": [
+          "<device-uuid>"
+        ],
+        "gpu": "NVIDIA GeForce RTX 5060 Ti",
+        "rss": 1169686528,
+        "torch_threads": 1
+      }
+    ],
+    "aggregation_start": 1794891390.3870578,
+    "aggregation_finish": 1794891390.3883035,
+    "available_cpus": 4.0,
+    "driver_rss": 1256042496,
+    "live_actor_pids": 0
+  },
+  {
+    "mode": "cuda:0",
+    "repetition": 1,
+    "wall_seconds": 3.7344698410015553,
+    "ray_startup_seconds": 3.340359713183716,
+    "round": 1,
+    "startup_seconds": 3.0289384578354657,
+    "cleanup_seconds": 0.2266490920446813,
+    "aggregation_seconds": 0.0011425421107560396,
+    "total_seconds": 3.7334800479002297,
+    "placements": [
+      {
+        "pid": 842503,
+        "created": 1794891392.5021548,
+        "cid": 25,
+        "visible": "<device-uuid>",
+        "gpu_ids": [
+          "<device-uuid>"
+        ],
+        "gpu": "NVIDIA GeForce RTX 5060 Ti",
+        "rss": 1178755072,
+        "torch_threads": 1
+      },
+      {
+        "pid": 842504,
+        "created": 1794891392.4795988,
+        "cid": 67,
+        "visible": "<device-uuid>",
+        "gpu_ids": [
+          "<device-uuid>"
+        ],
+        "gpu": "NVIDIA GeForce RTX 5060 Ti",
+        "rss": 1177481216,
+        "torch_threads": 1
+      },
+      {
+        "pid": 842505,
+        "created": 1794891392.5390925,
+        "cid": 16,
+        "visible": "<device-uuid>",
+        "gpu_ids": [
+          "<device-uuid>"
+        ],
+        "gpu": "NVIDIA GeForce RTX 5060 Ti",
+        "rss": 1177366528,
+        "torch_threads": 1
+      },
+      {
+        "pid": 842502,
+        "created": 1794891392.5344493,
+        "cid": 36,
+        "visible": "<device-uuid>",
+        "gpu_ids": [
+          "<device-uuid>"
+        ],
+        "gpu": "NVIDIA GeForce RTX 5060 Ti",
+        "rss": 1179246592,
+        "torch_threads": 1
+      }
+    ],
+    "aggregation_start": 1794891394.2242577,
+    "aggregation_finish": 1794891394.2254014,
+    "available_cpus": 4.0,
+    "driver_rss": 1256218624,
+    "live_actor_pids": 0
+  },
+  {
+    "mode": "cuda:0",
+    "repetition": 2,
+    "wall_seconds": 3.6955114149022847,
+    "ray_startup_seconds": 3.340359713183716,
+    "round": 1,
+    "startup_seconds": 3.0419228200335056,
+    "cleanup_seconds": 0.20495598297566175,
+    "aggregation_seconds": 0.001116122119128704,
+    "total_seconds": 3.6947156619280577,
+    "placements": [
+      {
+        "pid": 842767,
+        "created": 1794891396.2072146,
+        "cid": 25,
+        "visible": "<device-uuid>",
+        "gpu_ids": [
+          "<device-uuid>"
+        ],
+        "gpu": "NVIDIA GeForce RTX 5060 Ti",
+        "rss": 1176834048,
+        "torch_threads": 1
+      },
+      {
+        "pid": 842766,
+        "created": 1794891396.2193313,
+        "cid": 67,
+        "visible": "<device-uuid>",
+        "gpu_ids": [
+          "<device-uuid>"
+        ],
+        "gpu": "NVIDIA GeForce RTX 5060 Ti",
+        "rss": 1177210880,
+        "torch_threads": 1
+      },
+      {
+        "pid": 842769,
+        "created": 1794891396.2336824,
+        "cid": 16,
+        "visible": "<device-uuid>",
+        "gpu_ids": [
+          "<device-uuid>"
+        ],
+        "gpu": "NVIDIA GeForce RTX 5060 Ti",
+        "rss": 1173843968,
+        "torch_threads": 1
+      },
+      {
+        "pid": 842768,
+        "created": 1794891396.231354,
+        "cid": 36,
+        "visible": "<device-uuid>",
+        "gpu_ids": [
+          "<device-uuid>"
+        ],
+        "gpu": "NVIDIA GeForce RTX 5060 Ti",
+        "rss": 1173864448,
+        "torch_threads": 1
+      }
+    ],
+    "aggregation_start": 1794891397.9420052,
+    "aggregation_finish": 1794891397.9431221,
+    "available_cpus": 4.0,
+    "driver_rss": 1256398848,
+    "live_actor_pids": 0
+  },
+  {
+    "mode": "sequential",
+    "repetition": 0,
+    "wall_seconds": 0.035305583849549294,
+    "ray_startup_seconds": 0,
+    "round": 1,
+    "startup_seconds": 0,
+    "cleanup_seconds": 0,
+    "aggregation_seconds": 0.0009996779263019562,
+    "total_seconds": 0.03530617500655353
+  },
+  {
+    "mode": "sequential",
+    "repetition": 1,
+    "wall_seconds": 0.03305353014729917,
+    "ray_startup_seconds": 0,
+    "round": 1,
+    "startup_seconds": 0,
+    "cleanup_seconds": 0,
+    "aggregation_seconds": 0.0009590170811861753,
+    "total_seconds": 0.033053731080144644
+  },
+  {
+    "mode": "sequential",
+    "repetition": 2,
+    "wall_seconds": 0.03191219083964825,
+    "ray_startup_seconds": 0,
+    "round": 1,
+    "startup_seconds": 0,
+    "cleanup_seconds": 0,
+    "aggregation_seconds": 0.0009395580273121595,
+    "total_seconds": 0.03191231098026037
+  }
+]

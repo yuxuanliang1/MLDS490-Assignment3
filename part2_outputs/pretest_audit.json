@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "protected_files_unchanged": 474,
+  "main_runs": 21,
+  "all_81_round_histories_and_full_clean_pool_metrics_verified": true,
+  "all_selection_counts_and_training_weights_verified": true,
+  "identical_weights_and_sampling_within_each_seed": true,
+  "validation_investigations": 13,
+  "pretest": true,
+  "source_sha256": {
+    "part2/README.md": "be1249802bfd20598d716b1a83c841568322392c27124fc66298e4e7ba09a4d2",
+    "part2/__init__.py": "cc984c1520f91dae31a187120af1b6784f044e3ec49ad6393a69306cf6b0cdff",
+    "part2/artifacts.py": "826780c92e09d190c8d7f9588902f2e02ee16fb96fbb931a5790d550780cd4ca",
+    "part2/audit.py": "a7b5ce29f338eccf0c415fec3aea8634be8e4e54be4fb9bdc3ac177ecb30ebc8",
+    "part2/documentation.py": "1d9be04ab8b12f5b8ee019cfc582e70160ee1ee694f2f58fe2abbad814fdb0f4",
+    "part2/finalize_server.sh": "8ebf8addc321ca49c576cb2c208663263cfaf2cf523cd1ca29b792867f38c772",
+    "part2/noise.py": "d6e7db9e1e7578628766578cd00d2413aed8bdee52359951e4c0aeac367d8c0c",
+    "part2/run_server.sh": "3d1cf8779a219752928870eb9168b63ae652632776b23c4679f5958e5e9bf5dc",
+    "part2/runner.py": "03c7be161ed5cdb802171a3e3b0a7c90b13b7ca453a03b9350a5dc16b04eb6dc",
+    "part2/validation.py": "1cc15525c353c8fe6d3197242ec7e951d060ec703f8116dbf217c22c93c7b58a",
+    "part2/workflow.py": "6765375da9b331c397ad97e5c86a168da9c187fbc29b15328b6e1a020ed6f9a9"
+  }
+}

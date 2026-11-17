@@ -1,0 +1,34 @@
+{
+  "scales": [
+    0.0,
+    0.025,
+    0.05,
+    0.1,
+    0.2,
+    0.4,
+    0.8
+  ],
+  "seeds": [
+    2026,
+    2027,
+    2028
+  ],
+  "config": {
+    "b": 0.1,
+    "seed": 2026,
+    "rounds": 80,
+    "epochs": 3,
+    "lr": 0.3,
+    "batch_size": 32,
+    "fraction": 0.1,
+    "device": "cuda:0",
+    "convention": "fixed",
+    "tag": "original_users"
+  },
+  "primary": "fixed per-client training noise; clean train/validation evaluation; no clipping",
+  "test_protocol": "Evaluate round-80 checkpoints for ALL seven b and ALL three seeds once, after freeze. Also score the validation-best b=0.1 seed2026 checkpoint once for detailed Question1, labeled separately.",
+  "recommendation": "Largest positive b with mean final clean validation accuracy no more than 2 percentage points below mean b=0; no test-based changes",
+  "normalized_units": true,
+  "split_sha256": "d28950c5a5e41dbfbf526bedd75d3dfae198cbbdca439c88938995f8b6f0ccc9",
+  "created_at": 1794893114.9382327
+}

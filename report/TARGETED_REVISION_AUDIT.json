@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "abstract_words": 148,
+  "unchanged_tables": 14,
+  "unchanged_figure_assets": 20,
+  "unchanged_protected_files": 1007,
+  "seed_test_percent": [
+    74.12317039491853,
+    72.88041977354321,
+    73.12896989781828
+  ],
+  "mean_percent": 73.37752002209334,
+  "sample_sd_pp": 0.6576018171660174,
+  "validation_decline_010_to_020_pp": 5.285885229696689,
+  "hypothetical_calibration": [
+    {
+      "b": 0.05,
+      "epsilon_pixel": 20.0,
+      "epsilon_image": 15680.0
+    },
+    {
+      "b": 0.1,
+      "epsilon_pixel": 10.0,
+      "epsilon_image": 7840.0
+    },
+    {
+      "b": 0.2,
+      "epsilon_pixel": 5.0,
+      "epsilon_image": 3920.0
+    },
+    {
+      "b": 0.8,
+      "epsilon_pixel": 1.25,
+      "epsilon_image": 980.0
+    }
+  ],
+  "changed_files": [
+    "main.tex",
+    "references.bib",
+    "STATIC_AUDIT.json",
+    "sections/appendix.tex",
+    "sections/discussion.tex",
+    "sections/introduction.tex",
+    "sections/part1_1.tex",
+    "sections/part2.tex",
+    "sections/reproducibility.tex"
+  ],
+  "compilation_performed": false,
+  "experiments_run": false
+}

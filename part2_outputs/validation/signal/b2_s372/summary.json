@@ -1,0 +1,29 @@
+{
+  "b": 2.0,
+  "seed": 372,
+  "rounds": 30,
+  "epochs": 1,
+  "lr": 0.1,
+  "batch_size": 16,
+  "fraction": 0.1,
+  "device": "cuda:0",
+  "convention": "fixed",
+  "tag": "synthetic_spatial_signal",
+  "initial_digest": "edf70a82e63c717827af02d1db8302b195fec292b4afbfc55219429e17def5e3",
+  "eligible_clients": 20,
+  "final_metrics": {
+    "train_loss": 3.7066776116689044,
+    "train_accuracy": 1.0,
+    "train_n": 480,
+    "validation_loss": 3.7064822196960447,
+    "validation_accuracy": 1.0,
+    "validation_n": 160
+  },
+  "best_validation": 1.0,
+  "best_round": 30,
+  "elapsed_seconds": 1.369599194964394,
+  "preparation_seconds": 0.04484506091102958,
+  "peak_cuda_bytes": 174603776,
+  "training_examples": 480,
+  "split_sha256": "d28950c5a5e41dbfbf526bedd75d3dfae198cbbdca439c88938995f8b6f0ccc9"
+}

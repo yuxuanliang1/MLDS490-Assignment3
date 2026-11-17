@@ -1,0 +1,145 @@
+{
+  "parallel": {
+    "mode": "cpu",
+    "rounds": 80,
+    "seed": 2026,
+    "epochs": 3,
+    "lr": 0.3,
+    "batch_size": 32,
+    "clients_per_round": 4,
+    "best_validation": 0.7229592633057593,
+    "best_round": 78,
+    "final_metrics": {
+      "train_loss": 0.9472904539997492,
+      "train_accuracy": 0.7357384530647573,
+      "train_n": 25418,
+      "validation_loss": 1.1027416903830847,
+      "validation_accuracy": 0.7070391759013579,
+      "validation_n": 6407
+    },
+    "elapsed_seconds": 272.819362614071,
+    "ray_startup_seconds": 3.3180227619595826,
+    "split_sha256": "d28950c5a5e41dbfbf526bedd75d3dfae198cbbdca439c88938995f8b6f0ccc9"
+  },
+  "sequential": {
+    "mode": "sequential",
+    "rounds": 80,
+    "seed": 2026,
+    "epochs": 3,
+    "lr": 0.3,
+    "batch_size": 32,
+    "clients_per_round": 4,
+    "best_validation": 0.7229592633057593,
+    "best_round": 78,
+    "final_metrics": {
+      "train_loss": 0.9472904539997492,
+      "train_accuracy": 0.7357384530647573,
+      "train_n": 25418,
+      "validation_loss": 1.1027416903830847,
+      "validation_accuracy": 0.7070391759013579,
+      "validation_n": 6407
+    },
+    "elapsed_seconds": 11.947134441928938,
+    "ray_startup_seconds": 0,
+    "split_sha256": "d28950c5a5e41dbfbf526bedd75d3dfae198cbbdca439c88938995f8b6f0ccc9"
+  },
+  "test": {
+    "loss_sum": 3709.91845703125,
+    "correct": 2672,
+    "n": 3621,
+    "accuracy": 0.7379177022921845,
+    "selection_sha256": "e4f173dbceb751034485642a3d691991ba37d9b30921af45f3173b6480ca045e"
+  },
+  "equivalence": {
+    "final_max_parameter_difference": 0.0,
+    "max_metric_difference": 0.0,
+    "identical_selections": true
+  },
+  "performance": [
+    {
+      "mode": "sequential",
+      "repetitions": 3,
+      "mean_round_seconds": 0.033423768278832235,
+      "sd_round_seconds": 0.0017267270298000617,
+      "warm_mean_seconds": 0.03248286049347371,
+      "runtime_startup_seconds": 0,
+      "end_to_end_three_round_seconds": 0.10027130483649671,
+      "mean_actor_startup_seconds": 0.0,
+      "mean_cleanup_seconds": 0.0,
+      "mean_aggregation_seconds": 0.0009660843449334303,
+      "speedup_vs_sequential_CPU": 1.0
+    },
+    {
+      "mode": "cpu",
+      "repetitions": 3,
+      "mean_round_seconds": 3.0079399672492095,
+      "sd_round_seconds": 0.41717936793778077,
+      "warm_mean_seconds": 3.2476358498679474,
+      "runtime_startup_seconds": 5.110844713170081,
+      "end_to_end_three_round_seconds": 14.13466461491771,
+      "mean_actor_startup_seconds": 2.4297429299913347,
+      "mean_cleanup_seconds": 0.08442355738952756,
+      "mean_aggregation_seconds": 0.001225293070698778,
+      "speedup_vs_sequential_CPU": 0.011111846859563025
+    },
+    {
+      "mode": "cuda:0",
+      "repetitions": 3,
+      "mean_round_seconds": 4.114887667276586,
+      "sd_round_seconds": 0.6929158433193267,
+      "warm_mean_seconds": 3.71499062795192,
+      "runtime_startup_seconds": 3.340359713183716,
+      "end_to_end_three_round_seconds": 15.685022715013474,
+      "mean_actor_startup_seconds": 2.761063417963063,
+      "mean_cleanup_seconds": 0.22540057403966784,
+      "mean_aggregation_seconds": 0.0011680133951207001,
+      "speedup_vs_sequential_CPU": 0.00812264415979879
+    }
+  ],
+  "lifecycle": {
+    "rounds": 80,
+    "client_actors_per_round": 4,
+    "distinct_processes_per_round": true,
+    "maximum_training_concurrency": 4,
+    "rounds_with_four_overlapping": 80,
+    "all_actor_processes_exited_between_rounds": true,
+    "all_cpu_resources_returned": true,
+    "driver_rss_first_MiB": 1171.48828125,
+    "driver_rss_last_MiB": 1172.921875,
+    "driver_rss_max_MiB": 1172.921875,
+    "mean_fastest_slowest_gap_seconds": 0.0329291969537735,
+    "maximum_fastest_slowest_gap_seconds": 0.14037346839904785,
+    "mean_client_training_seconds": 0.3168298177421093,
+    "mean_actor_startup_seconds": 2.6881112146482335,
+    "mean_cleanup_seconds": 0.09368039273540489,
+    "mean_aggregation_seconds": 0.0011728106590453535,
+    "mean_completion_wait_seconds": 0.01268317773938179
+  },
+  "extra_validation": {
+    "unavailable_gpu": {
+      "reported": "GetTimeoutError",
+      "cpus_returned": 4.0
+    },
+    "tiny_missing_classes": {
+      "sizes": [
+        1,
+        2,
+        7,
+        13
+      ],
+      "parameter_difference": 0.0
+    },
+    "replay_and_repeat": {
+      "parameter_difference": 0.0,
+      "input_unchanged": true
+    },
+    "passed": true
+  },
+  "figures": [
+    "ray_loss",
+    "ray_accuracy",
+    "sequential_parallel_accuracy",
+    "parallel_performance",
+    "actor_execution_timeline"
+  ]
+}

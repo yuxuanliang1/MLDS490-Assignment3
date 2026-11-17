@@ -1,0 +1,29 @@
+{
+  "b": 0.1,
+  "seed": 2026,
+  "rounds": 40,
+  "epochs": 3,
+  "lr": 0.3,
+  "batch_size": 32,
+  "fraction": 0.1,
+  "device": "cuda:0",
+  "convention": "resampled",
+  "tag": "original_users",
+  "initial_digest": "e76d32590bc7cfb80d40ceb0807df0c305db88a5bc212e1fea67d50cb8dd2515",
+  "eligible_clients": 100,
+  "final_metrics": {
+    "train_loss": 1.174230069646641,
+    "train_accuracy": 0.6746006766858132,
+    "train_n": 25418,
+    "validation_loss": 1.267361898885161,
+    "validation_accuracy": 0.6583424379584829,
+    "validation_n": 6407
+  },
+  "best_validation": 0.6614640237240518,
+  "best_round": 38,
+  "elapsed_seconds": 11.210743525065482,
+  "preparation_seconds": 0.1367904068902135,
+  "peak_cuda_bytes": 179934208,
+  "training_examples": 25418,
+  "split_sha256": "d28950c5a5e41dbfbf526bedd75d3dfae198cbbdca439c88938995f8b6f0ccc9"
+}

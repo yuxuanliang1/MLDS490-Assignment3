@@ -1,0 +1,4 @@
+\section{Introduction}\label{sec:introduction}
+Federated learning combines client-local training with server aggregation to learn from decentralized, heterogeneous data. FedAvg weights locally trained models by their contributing sample counts \citep{mcmahan2017}. Multiple local steps can reduce communication frequency, but non-IID client distributions can make their updates diverge \citep{courseFL}.
+
+Following the assignment \citep{assignment}, we investigate three questions: how client participation and local epochs affect sequential FedAvg; whether Ray preserves the algorithm while executing clients concurrently; and how fixed Laplace input perturbation changes clean-data utility. The experiments use the same EMNIST subset, architecture, and client splits. Their validation combines mathematical identities, controlled learning interventions, stochastic diagnostics, execution traces, and failure recovery to examine correctness alongside predictive performance.

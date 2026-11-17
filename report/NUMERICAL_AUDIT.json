@@ -1,0 +1,782 @@
+{
+  "scope": "Read-only arithmetic and integrity checks on saved artifacts; no training, inference, or LaTeX compilation.",
+  "limitation": "Parameter-difference results are cited from saved scientific validation records, not recomputed locally. PyTorch is unavailable in the local report environment.",
+  "passed": true,
+  "check_count": 154,
+  "checks": [
+    {
+      "name": "Fixed split counts",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Split manifest SHA-256",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P11 history: c02_e1_s2026",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P11 history: c02_e3_s2026",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P11 history: c05_e1_s2026",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P11 history: c05_e3_s2026",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P11 history: c10_e1_s2026",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P11 history: c10_e3_s2026",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P11 history: c10_e3_s2027",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P11 history: c10_e3_s2028",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P11 history: c05_e3_s2027",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P11 history: c05_e3_s2028",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "part1_1_deepdish5_outputs\\final_test.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "part1_2_outputs\\test.json",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Ray full metric equality",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Ray identical client schedule",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 1",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 3",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 4",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 5",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 6",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 7",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 8",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 9",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 10",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 11",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 12",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 13",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 14",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 15",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 16",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 17",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 18",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 19",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 20",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 21",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 22",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 23",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 24",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 25",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 26",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 27",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 28",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 29",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 30",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 31",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 32",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 33",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 34",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 35",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 36",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 37",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 38",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 39",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 40",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 41",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 42",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 43",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 44",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 45",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 46",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 47",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 48",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 49",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 50",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 51",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 52",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 53",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 54",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 55",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 56",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 57",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 58",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 59",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 60",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 61",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 62",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 63",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 64",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 65",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 66",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 67",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 68",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 69",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 70",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 71",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 72",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 73",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 74",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 75",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 76",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 77",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 78",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 79",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Four overlapping processes round 80",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "All-round cleanup",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Full workload runtime",
+      "passed": true,
+      "details": {
+        "ray_seconds": 276.1373853760306,
+        "speedup": 0.04326518274828997,
+        "slowdown": 23.11327345634578
+      }
+    },
+    {
+      "name": "P2 history and test: b0_s2026",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.025_s2026",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.05_s2026",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.1_s2026",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.2_s2026",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.4_s2026",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.8_s2026",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0_s2027",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.025_s2027",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.05_s2027",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.1_s2027",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.2_s2027",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.4_s2027",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.8_s2027",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0_s2028",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.025_s2028",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.05_s2028",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.1_s2028",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.2_s2028",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.4_s2028",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 history and test: b0.8_s2028",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Recomputed mean/sample SD: b=0.0",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Recomputed mean/sample SD: b=0.025",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Recomputed mean/sample SD: b=0.05",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Recomputed mean/sample SD: b=0.1",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Recomputed mean/sample SD: b=0.2",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Recomputed mean/sample SD: b=0.4",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Recomputed mean/sample SD: b=0.8",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P2 Q1 selected checkpoint",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Recomputed validation-only recommendation",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Recomputed zero-noise full metric equality: 2026",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Recomputed zero-noise full metric equality: 2027",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Recomputed zero-noise full metric equality: 2028",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "P11 selected checkpoint digest",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0_s2026/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.025_s2026/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.05_s2026/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.1_s2026/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.2_s2026/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.4_s2026/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.8_s2026/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0_s2027/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.025_s2027/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.05_s2027/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.1_s2027/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.2_s2027/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.4_s2027/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.8_s2027/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0_s2028/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.025_s2028/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.05_s2028/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.1_s2028/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.2_s2028/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.4_s2028/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Frozen checkpoint digest: part2_outputs/experiments/b0.8_s2028/last.pt",
+      "passed": true,
+      "details": null
+    },
+    {
+      "name": "Q1 frozen checkpoint digest",
+      "passed": true,
+      "details": null
+    }
+  ]
+}

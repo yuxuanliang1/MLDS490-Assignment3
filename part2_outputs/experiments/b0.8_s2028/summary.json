@@ -1,0 +1,29 @@
+{
+  "b": 0.8,
+  "seed": 2028,
+  "rounds": 80,
+  "epochs": 3,
+  "lr": 0.3,
+  "batch_size": 32,
+  "fraction": 0.1,
+  "device": "cuda:0",
+  "convention": "fixed",
+  "tag": "original_users",
+  "initial_digest": "87cc1948c656f84c4a5c4973505d97abb5a6306dd1e23761f14e5ccc164297ee",
+  "eligible_clients": 100,
+  "final_metrics": {
+    "train_loss": 3.362706359003631,
+    "train_accuracy": 0.37799984263120623,
+    "train_n": 25418,
+    "validation_loss": 3.37990490285398,
+    "validation_accuracy": 0.3624161073825503,
+    "validation_n": 6407
+  },
+  "best_validation": 0.4513813017012642,
+  "best_round": 34,
+  "elapsed_seconds": 13.378333983011544,
+  "preparation_seconds": 0.372866977006197,
+  "peak_cuda_bytes": 255090688,
+  "training_examples": 25418,
+  "split_sha256": "d28950c5a5e41dbfbf526bedd75d3dfae198cbbdca439c88938995f8b6f0ccc9"
+}

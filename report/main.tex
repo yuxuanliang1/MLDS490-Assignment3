@@ -1,0 +1,90 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=0.9in]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs,tabularx,array,longtable}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{subcaption}
+\usepackage{placeins}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xurl}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!60!black]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\hypersetup{pdftitle={Federated Learning on EMNIST: FedAvg, Ray Parallelization, and Laplace Input Perturbation},pdfauthor={yuxuanliang1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\pp}{\,\text{pp}}
+\lstset{basicstyle=\ttfamily\small,breaklines=true,columns=fullflexible,keepspaces=true,showstringspaces=false,frame=single,rulecolor=\color{black!20},aboveskip=8pt,belowskip=8pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\tabcolsep}{5pt}
+\setlength{\headheight}{14pt}
+\setlength{\textfloatsep}{11pt plus 2pt minus 2pt}
+\setlength{\floatsep}{9pt plus 2pt minus 2pt}
+\setlength{\intextsep}{11pt plus 2pt minus 2pt}
+\captionsetup{skip=5pt}
+\raggedbottom
+\renewcommand{\arraystretch}{1.13}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{5}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.65}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{12pt plus 2pt minus 2pt}
+\makeatother
+\newcommand{\StudentName}{Yuxuan Liang}
+\newcommand{\GitHubUsername}{yuxuanliang1}
+\newcommand{\RepositoryName}{MLDS490-Assignment3}
+\newcommand{\RepositoryURL}{https://github.com/yuxuanliang1/MLDS490-Assignment3}
+\newcommand{\SubmissionDate}{November 20, 2026}
+\newcommand{\PublicRepository}{\href{\RepositoryURL}{MLDS490-Assignment3}}
+\newcommand{\SD}{\operatorname{SD}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{MLDS 490 Assignment \#3 - Report}
+\fancyfoot[C]{\thepage}
+
+
+\title{\textbf{MLDS 490 Advanced Algorithms for Artificial Intelligence}}
+\author{\textbf{Assignment \#3}\\
+\StudentName\\
+\small GitHub username: \texttt{\GitHubUsername}\\
+\small Repository name: \texttt{\RepositoryName}\\
+\small Repository URL: \expandafter\url\expandafter{\RepositoryURL}}
+\date{\SubmissionDate}
+
+
+\begin{document}
+\maketitle
+\begin{abstract}
+This report investigates federated image classification on the supplied Federated EMNIST subset using sequential FedAvg, Ray Actor parallelization, and Laplace input perturbation. A shared neural network and fixed client splits support comparisons of predictive performance, numerical correctness, and computational cost. Scientific validation combines algebraic identities, controlled learning interventions, stochastic diagnostics, and failure recovery. Sequential FedAvg achieves 74.12\% held-out accuracy at its validation-selected checkpoint; aggregation and one-step centralized-SGD comparisons yield maximum parameter errors of approximately $2.38\times10^{-7}$ and $7.45\times10^{-9}$. Ray reproduces the matched sequential trajectory and executes clients concurrently, but Actor lifecycle overhead makes this workload approximately $23.1\times$ slower. Under a predefined maximum two-percentage-point decrease in mean final validation accuracy, $b=0.05$ is the largest acceptable tested perturbation, with 72.66\% mean test accuracy. This utility-preserving choice is not evidence of strong privacy: illustrative Laplace calibration gives loose whole-image bounds, and the implemented training pipeline has no verified end-to-end differential privacy guarantee.
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/methodology}
+\input{sections/part1_1}
+\FloatBarrier
+\input{sections/part1_2}
+\input{sections/part2}
+\FloatBarrier
+\input{sections/discussion}
+\input{sections/extended_plan}
+\input{sections/reproducibility}
+\input{sections/conclusion}
+\FloatBarrier
+\bibliographystyle{plainnat}
+\bibliography{references}
+\clearpage
+\appendix
+\input{sections/appendix}
+\end{document}

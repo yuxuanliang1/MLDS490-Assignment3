@@ -1,0 +1,49 @@
+\section{Dataset and Common Experimental Methodology}\label{sec:methodology}
+\subsection{Data provenance, client boundaries, and preprocessing}
+The instructor-supplied NumPy files contain a LEAF-derived subset \citep{leaf2018}. The development array contains 100 client dictionaries, indexed by original client ID; the test file is a separate aggregate partition. \Cref{tab:data} summarizes the data and shared model.
+
+\begin{table}[htbp]
+\centering
+\caption{Verified dataset and model characteristics. Counts refer to the supplied subset, not the full LEAF benchmark.}\label{tab:data}
+\begin{tabularx}{\linewidth}{lY}
+\toprule
+Property & Value or convention\\
+\midrule
+Development clients and examples & 100 clients; 31,825 examples\\
+Training / validation / test & 25,418 / 6,407 / 3,621 examples\\
+Client size before splitting & 118--393; median 331; mean 318.25\\
+Images and labels & $28\times28$ grayscale; numeric labels 0--61\\
+Input representation & Finite normalized pixels; fixed inversion $z=1-X$\\
+Network & Flatten $\to$ Linear$(784,128)$ $\to$ ReLU $\to$ Linear$(128,62)$\\
+Trainable parameters & $(784\cdot128+128)+(128\cdot62+62)=108{,}478$\\
+Local optimizer & Plain SGD; mean cross-entropy; no momentum or weight decay\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Pixels are float32 values in $[0,1]$. The fixed inversion $z=1-X$ converts dark glyphs on white backgrounds to positive ink on a zero background, without fitted normalization, resizing, rotation, or augmentation. Labels are cast to int64 for cross-entropy. Plots retain numeric IDs because no character-order mapping is supplied.
+
+Each client is permuted independently using a key derived from split seed 490 and client ID. Training receives $\lfloor0.8N_k\rfloor$ examples and validation the remainder. These non-stratified splits preserve original client boundaries and are reused across all parts through \path{part1_1_deepdish5_outputs/splits.json}, with coverage and disjointness checked. Preserving writers retains the federated size and distribution differences; the isolated partition intervention in Part 1.1 deliberately changes only training allocations.
+
+\subsection{Metrics, checkpoints, and experimental controls}
+Let $D_k^q$ denote client $k$'s training or validation partition, and let $N^q=\sum_k|D_k^q|$. Global evaluation uses the updated model on the complete client pool, including clients not selected in that round:
+\begin{align}
+ L^q(w)&=\frac{1}{N^q}\sum_k\sum_{(x,y)\in D_k^q}\ell(f_w(x),y),\label{eq:loss}\\
+ A^q(w)&=\frac{1}{N^q}\sum_k\sum_{(x,y)\in D_k^q}\mathbf{1}\{\arg\max_c f_w(x)_c=y\}.\label{eq:accuracy}
+\end{align}
+Client loss sums and correct counts are pooled before division, so a small client does not receive the same metric weight as a large client. The network returns logits for cross-entropy. Each main run records round zero and 80 updated global models.
+
+In Part 2, only optimization uses perturbed inputs. Reported training, validation, and test metrics all use clean data; the training curve therefore measures clean utility rather than the noisy local objective.
+
+Best checkpoints maximize validation accuracy, breaking ties by lower cross-entropy and then earlier round. Part 1.1 additionally selects a configuration and seed; Part 1.2 uses one full training seed. Part 2 averages round-80 outcomes across three seeds, with a separate validation-best result for Question 1. These evaluation protocols remain distinct.
+
+Initialization, participation, and minibatch ordering are seeded. Part 1.1 shares initialization within each seed and client schedules between $E$ values at fixed $C$; different $C$ values use keyed, non-nested streams. Part 2 adds an independent noise stream while matching the optimization streams across $b$. All reported across-seed error bars are sample standard deviations with the split fixed.
+
+\subsection{Execution environment and scope of isolation}
+Experiments ran on DeepDish5 with 48 logical CPUs and 93.8 GiB RAM. Parts 1.1 and 2 used an NVIDIA GeForce RTX 5060 Ti (15.57 GiB; compute capability 12.0) and two PyTorch CPU threads. Ray used four one-thread CPU Actors and a one-thread driver. The environment was Python 3.12.6, PyTorch 2.14.0+cu130, CUDA 13.0, NumPy 2.5.3, Matplotlib 3.11.2, and Ray 2.60.0 for Part 1.2.
+
+Deterministic algorithms, fixed cuBLAS workspace configuration, and disabled TF32 support repeatability. Clients are simulated on shared hardware: local objects or Actors own their data, and aggregation receives parameters and permitted metadata. This logical separation does not provide physical data isolation or secure aggregation. The shared-host timing and statistical scope are discussed in \cref{sec:discussion}.
+
+
+
+

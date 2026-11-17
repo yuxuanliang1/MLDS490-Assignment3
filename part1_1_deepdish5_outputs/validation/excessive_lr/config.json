@@ -1,0 +1,11 @@
+{
+  "rounds": 5,
+  "fraction": 0.1,
+  "epochs": 3,
+  "lr": 1000000.0,
+  "batch_size": 16,
+  "seed": 402,
+  "device": "cuda:0",
+  "split_sha256": "synthetic-seed-802",
+  "data_tag": "excessive_lr_stress"
+}

@@ -1,0 +1,436 @@
+[
+  {
+    "test": "A_D_equivalence_cpu",
+    "hypothesis": "Parallelism preserves local SGD and weighted synchronous FedAvg",
+    "design": "Unequal real clients 25,67,16,36; identical CPU initialization and keyed batch order; E3 LR.3",
+    "expected": "CPU parameter difference <=1e-6; GPU <=1e-4",
+    "observed": {
+      "client_max_differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "global_max_difference": 0.0,
+      "metric_differences": {
+        "train_loss": 0.0,
+        "train_accuracy": 0.0,
+        "train_n": 0,
+        "validation_loss": 0.0,
+        "validation_accuracy": 0.0,
+        "validation_n": 0
+      },
+      "manual_aggregation_error": 1.552064768373107e-08,
+      "events": [
+        {
+          "client_id": 25,
+          "round": 1,
+          "pid": 845584,
+          "created": 1794891431.8737278,
+          "start": 1794891432.8616817,
+          "finish": 1794891433.178818,
+          "n_train": 94,
+          "rss": 1014861824,
+          "cuda_peak": 0
+        },
+        {
+          "client_id": 67,
+          "round": 1,
+          "pid": 845582,
+          "created": 1794891431.8679626,
+          "start": 1794891432.8617043,
+          "finish": 1794891433.1796577,
+          "n_train": 314,
+          "rss": 1012441088,
+          "cuda_peak": 0
+        },
+        {
+          "client_id": 16,
+          "round": 1,
+          "pid": 845585,
+          "created": 1794891431.8736508,
+          "start": 1794891432.861707,
+          "finish": 1794891433.1752772,
+          "n_train": 300,
+          "rss": 1009360896,
+          "cuda_peak": 0
+        },
+        {
+          "client_id": 36,
+          "round": 1,
+          "pid": 845583,
+          "created": 1794891431.8740501,
+          "start": 1794891432.861679,
+          "finish": 1794891433.1792939,
+          "n_train": 182,
+          "rss": 1010253824,
+          "cuda_peak": 0
+        }
+      ]
+    },
+    "passed": true,
+    "limitations": "GPU kernels may differ from CPU; one-round test complemented by full trajectory comparison"
+  },
+  {
+    "test": "G_exception",
+    "hypothesis": "An incomplete or invalid round is never committed",
+    "design": "Inject failure in one of four real-data actors; other actors terminated in finally",
+    "expected": "Explicit exception, resources returned",
+    "observed": {
+      "error": "RayTaskError(RuntimeError): \u001b[36mray::LocalActor.train()\u001b[39m (pid=847062, ip=<host-address>, actor_id=2318c21d193dc9b09a1917f001000000, repr=<part1_2.core.LocalActor object at 0x7fa4877727b0>)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repository>/part1_2/core.py\", line 35, in train\n    if fail=='exception': raise RuntimeError('Injected client exception')\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRunti",
+      "available_resources": {
+        "memory": 67467665408.0,
+        "object_store_memory": 266693741.0,
+        "node:__internal_head__": 1.0,
+        "CPU": 4.0,
+        "node:<host-address>": 1.0
+      }
+    },
+    "passed": true,
+    "limitations": "OOM and interruption are controlled injections, not real resource exhaustion"
+  },
+  {
+    "test": "G_oom",
+    "hypothesis": "An incomplete or invalid round is never committed",
+    "design": "Inject failure in one of four real-data actors; other actors terminated in finally",
+    "expected": "Explicit exception, resources returned",
+    "observed": {
+      "error": "RayTaskError(MemoryError): \u001b[36mray::LocalActor.train()\u001b[39m (pid=847534, ip=<host-address>, actor_id=8abb7a7916df60867b3d087901000000, repr=<part1_2.core.LocalActor object at 0x7fa4ccaa9010>)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<repository>/part1_2/core.py\", line 36, in train\n    if fail=='oom': raise MemoryError('Injected allocation failure; no physical memory exhaustion')\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+      "available_resources": {
+        "memory": 67467665408.0,
+        "object_store_memory": 266693741.0,
+        "CPU": 4.0,
+        "node:__internal_head__": 1.0,
+        "node:<host-address>": 1.0
+      }
+    },
+    "passed": true,
+    "limitations": "OOM and interruption are controlled injections, not real resource exhaustion"
+  },
+  {
+    "test": "G_nan",
+    "hypothesis": "An incomplete or invalid round is never committed",
+    "design": "Inject failure in one of four real-data actors; other actors terminated in finally",
+    "expected": "Explicit exception, resources returned",
+    "observed": {
+      "error": "FloatingPointError: Non-finite update from client 25: 1.weight",
+      "available_resources": {
+        "memory": 67467665408.0,
+        "object_store_memory": 266258262.0,
+        "CPU": 4.0,
+        "node:__internal_head__": 1.0,
+        "node:<host-address>": 1.0
+      }
+    },
+    "passed": true,
+    "limitations": "OOM and interruption are controlled injections, not real resource exhaustion"
+  },
+  {
+    "test": "G_interrupt",
+    "hypothesis": "An incomplete or invalid round is never committed",
+    "design": "Inject failure in one of four real-data actors; other actors terminated in finally",
+    "expected": "Explicit exception, resources returned",
+    "observed": {
+      "error": "InterruptedError: Injected interruption: round not committed",
+      "available_resources": {
+        "memory": 67467665408.0,
+        "object_store_memory": 268000182.0,
+        "CPU": 4.0,
+        "node:__internal_head__": 1.0,
+        "node:<host-address>": 1.0
+      }
+    },
+    "passed": true,
+    "limitations": "OOM and interruption are controlled injections, not real resource exhaustion"
+  },
+  {
+    "test": "G_unavailable_GPU",
+    "hypothesis": "Unavailable GPU requests fail with bounded waiting",
+    "design": "CPU-only Ray runtime; request four fractional-GPU Actors, 0.5s deadline",
+    "expected": "Timeout and cleanup, no aggregation",
+    "observed": {
+      "error": "GetTimeoutError",
+      "resources": {
+        "memory": 67467665408.0,
+        "object_store_memory": 268435456.0,
+        "node:__internal_head__": 1.0,
+        "CPU": 4.0,
+        "node:<host-address>": 1.0
+      }
+    },
+    "passed": true,
+    "limitations": "Tests a logical resource shortage without occupying another GPU"
+  },
+  {
+    "test": "G_tiny_and_recovery",
+    "hypothesis": "Tiny, missing-class clients and replay after failure preserve FedAvg",
+    "design": "Synthetic n=1,2,7,13, all class zero; then replay failed real round",
+    "expected": "Both parameter differences <=1e-6",
+    "observed": {
+      "tiny_error": 0.0,
+      "replay_error": 0.0
+    },
+    "passed": true,
+    "limitations": "Synthetic edge clients are excluded from the 100-user experiment"
+  },
+  {
+    "test": "A_D_equivalence_cuda:0",
+    "hypothesis": "Fractional-GPU Actor updates match CPU SGD",
+    "design": "Four unequal real clients, same initial weights, batch order, LR .3 E3",
+    "expected": "Max parameter error <=1e-4",
+    "observed": {
+      "client_max_differences": [
+        2.9802322387695312e-08,
+        5.960464477539063e-08,
+        5.960464477539063e-08,
+        2.9802322387695312e-08
+      ],
+      "global_max_difference": 2.9802322387695312e-08,
+      "metric_differences": {
+        "train_loss": 3.481822963280479e-08,
+        "train_accuracy": 0.0,
+        "train_n": 0,
+        "validation_loss": 4.7631618649290886e-09,
+        "validation_accuracy": 0.0,
+        "validation_n": 0
+      },
+      "manual_aggregation_error": 1.3913331403658802e-08,
+      "events": [
+        {
+          "client_id": 25,
+          "round": 1,
+          "pid": 870054,
+          "created": 1794892126.7390664,
+          "start": 1794892128.347878,
+          "finish": 1794892128.6868494,
+          "n_train": 94,
+          "rss": 1707929600,
+          "cuda_peak": 69411328
+        },
+        {
+          "client_id": 67,
+          "round": 1,
+          "pid": 870053,
+          "created": 1794892126.7127602,
+          "start": 1794892128.347876,
+          "finish": 1794892128.6927912,
+          "n_train": 314,
+          "rss": 1709445120,
+          "cuda_peak": 70104576
+        },
+        {
+          "client_id": 16,
+          "round": 1,
+          "pid": 870055,
+          "created": 1794892126.7222881,
+          "start": 1794892128.347877,
+          "finish": 1794892128.7041554,
+          "n_train": 300,
+          "rss": 1722376192,
+          "cuda_peak": 70060544
+        },
+        {
+          "client_id": 36,
+          "round": 1,
+          "pid": 870056,
+          "created": 1794892126.7291486,
+          "start": 1794892128.3478768,
+          "finish": 1794892128.6895568,
+          "n_train": 182,
+          "rss": 1707667456,
+          "cuda_peak": 69688320
+        }
+      ],
+      "placements": [
+        {
+          "pid": 870054,
+          "created": 1794892126.7390664,
+          "cid": 25,
+          "visible": "<device-uuid>",
+          "gpu_ids": [
+            "<device-uuid>"
+          ],
+          "gpu": "NVIDIA GeForce RTX 5060 Ti",
+          "rss": 1165864960,
+          "torch_threads": 1
+        },
+        {
+          "pid": 870053,
+          "created": 1794892126.7127602,
+          "cid": 67,
+          "visible": "<device-uuid>",
+          "gpu_ids": [
+            "<device-uuid>"
+          ],
+          "gpu": "NVIDIA GeForce RTX 5060 Ti",
+          "rss": 1168023552,
+          "torch_threads": 1
+        },
+        {
+          "pid": 870055,
+          "created": 1794892126.7222881,
+          "cid": 16,
+          "visible": "<device-uuid>",
+          "gpu_ids": [
+            "<device-uuid>"
+          ],
+          "gpu": "NVIDIA GeForce RTX 5060 Ti",
+          "rss": 1171263488,
+          "torch_threads": 1
+        },
+        {
+          "pid": 870056,
+          "created": 1794892126.7291486,
+          "cid": 36,
+          "visible": "<device-uuid>",
+          "gpu_ids": [
+            "<device-uuid>"
+          ],
+          "gpu": "NVIDIA GeForce RTX 5060 Ti",
+          "rss": 1166143488,
+          "torch_threads": 1
+        }
+      ]
+    },
+    "passed": true,
+    "limitations": "One-round GPU test; full matched trajectory uses selected CPU strategy"
+  },
+  {
+    "test": "F_sampling",
+    "hypothesis": "Uniform four-client sampling is reproducible",
+    "design": "10000 rounds; two identical seeds and one different seed",
+    "expected": "Exactly four unique IDs, same-seed equality, different-seed difference, max z<5",
+    "observed": {
+      "min": 351,
+      "max": 439,
+      "expected": 400,
+      "max_abs_z": 2.500520779091161,
+      "counts": [
+        408,
+        421,
+        404,
+        409,
+        428,
+        402,
+        401,
+        393,
+        409,
+        382,
+        363,
+        384,
+        391,
+        411,
+        384,
+        404,
+        391,
+        408,
+        405,
+        407,
+        409,
+        388,
+        376,
+        395,
+        408,
+        396,
+        395,
+        429,
+        432,
+        364,
+        376,
+        398,
+        413,
+        435,
+        405,
+        394,
+        390,
+        428,
+        426,
+        415,
+        393,
+        402,
+        374,
+        398,
+        361,
+        407,
+        385,
+        408,
+        392,
+        402,
+        419,
+        410,
+        393,
+        389,
+        394,
+        399,
+        408,
+        395,
+        351,
+        428,
+        402,
+        412,
+        362,
+        369,
+        427,
+        404,
+        403,
+        415,
+        401,
+        394,
+        393,
+        439,
+        417,
+        415,
+        419,
+        361,
+        384,
+        425,
+        406,
+        394,
+        384,
+        407,
+        432,
+        381,
+        423,
+        383,
+        428,
+        389,
+        380,
+        393,
+        405,
+        390,
+        396,
+        435,
+        378,
+        425,
+        361,
+        405,
+        385,
+        393
+      ]
+    },
+    "passed": true,
+    "limitations": "Marginal counts are a diagnostic, not proof of uniformity"
+  },
+  {
+    "test": "D_synthetic_aggregation",
+    "hypothesis": "Unequal counts produce manual weighted average",
+    "design": "Reuse Part 1.1 deterministic vectors",
+    "expected": "Error <=1e-6",
+    "observed": {
+      "max_abs_error": 2.384185791015625e-07,
+      "tolerance": 1e-06,
+      "actual": [
+        -0.5,
+        2.8000001907348633,
+        5.400000095367432
+      ],
+      "expected": [
+        -0.5,
+        2.799999952316284,
+        5.400000095367432
+      ]
+    },
+    "passed": true,
+    "limitations": "Small synthetic arithmetic test"
+  }
+]

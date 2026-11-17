@@ -1,0 +1,32 @@
+{
+  "hostname": "mlds-deepdish5",
+  "platform": "Linux-6.12.115+deb13.1-amd64-x86_64-with-glibc2.41",
+  "python": "3.12.6 | packaged by conda-forge | (main, Sep 22 2024, 14:16:49) [GCC 13.3.0]",
+  "executable": "<private-home>/.venvs/mlds490-pg-deepdish5/bin/python",
+  "torch": "2.14.0+cu130",
+  "numpy": "2.5.3",
+  "matplotlib": "3.11.2",
+  "cuda_build": "13.0",
+  "cuda_available": true,
+  "cuda_architectures": [
+    "sm_75",
+    "sm_80",
+    "sm_86",
+    "sm_90",
+    "sm_100",
+    "sm_120"
+  ],
+  "device": "cuda:0",
+  "logical_cpus": 48,
+  "cpu": "",
+  "ram_bytes": 100722499584,
+  "ram_available_bytes": 71486590976,
+  "threads": 2,
+  "nvidia_smi": "Mon Nov 16 22:38:01 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 615.71.09              KMD Version: 615.71.09     CUDA UMD Version: 13.4     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5060 Ti     On  |   00000000:01:00.0 Off |                  N/A |\n|  0%   41C    P1              5W /  180W |     266MiB /  16311MiB |      0%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   1  NVIDIA RTX PRO 5000 Blac...    On  |   00000000:41:00.0 Off |                  Off |\n| 69%   86C    P1            299W /  300W |   35597MiB /  48935MiB |    100%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n|   2  NVIDIA GeForce RTX 5060 Ti     On  |   00000000:42:00.0 Off |                  N/A |\n|  0%   44C    P1             30W /  180W |     376MiB /  16311MiB |     39%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A          837376      C   ...ds490-pg-deepdish5/bin/python        256MiB |\n|    1   N/A  N/A          391344      C   ...envs/deepdish5-gpu/bin/python        514MiB |\n|    1   N/A  N/A          543575      C   /opt/conda/bin/python                 33508MiB |\n|    1   N/A  N/A          642294      C   ...envs/deepdish5-gpu/bin/python        468MiB |\n|    1   N/A  N/A          689035      C   ...envs/deepdish5-gpu/bin/python        612MiB |\n|    1   N/A  N/A          811317      C   ...envs/deepdish5-gpu/bin/python        464MiB |\n|    2   N/A  N/A          811318      C   ...envs/deepdish5-gpu/bin/python        366MiB |\n+-----------------------------------------------------------------------------------------+\n",
+  "gpu": "NVIDIA GeForce RTX 5060 Ti",
+  "gpu_memory_bytes": 16715481088,
+  "gpu_compute_capability": [
+    12,
+    0
+  ]
+}

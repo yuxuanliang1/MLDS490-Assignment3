@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "part1_1_source_and_supplied_data_preserved": true,
+  "exactly_four_unique_selected_clients_in_all_80_rounds": true,
+  "training_weights_match_fixed_split": true,
+  "checkpoint_matches_validation_rule": true,
+  "test_selection_hash_matches": true,
+  "GPU_benchmark_placement_verified": true,
+  "extra_validation_passed": true,
+  "source_sha256": {
+    "part1_2/__init__.py": "b646085ee3e6eb3b07cf377b223bcd5fa740fbdc4d81337c4625453e5536df02",
+    "part1_2/core.py": "ba6715b2395e41e9ccfb2e46e2f084e28d3024dc1fc48bc9e811fef1a8d5eb4e",
+    "part1_2/workflow.py": "b4ea11f2313fedf4012f80b43213b32cf1d7e540956b7bfd1f69235bc713d95a",
+    "part1_2/README.md": "a88eb3fc509954406e8bcf044bf6824ff2e3e9d077fb0dc6c63011e7a933ab6b",
+    "part1_2/artifacts.py": "40dc49fafec0581e5e930896a97b1a3c8728d3e07ec6ec98af80677fedc10afd",
+    "part1_2/extra_validation.py": "6c196cd780fb58f47a191cdfd4835bf693b79a6502ce7b159cf4a117834db6f9",
+    "part1_2/finish_validation.py": "cc4ae4a8f489fe6539d91e78b77961d0a6fe96088194d249aa7ce6b513aa401b",
+    "part1_2/audit.py": "2fab2adf4d0616fcd69d31976924079fb418072b958c95d3a93a435351d217a6",
+    "part1_2/stop_duplicate.py": "de9a3b2513937e3a120dac968b15e7ea360b13e91413688a05b6ee3c0997b506",
+    "part1_2/run_server.sh": "4e32b46540e9a009a52a10f122a2553ec88ccf6caa95ad4473383fa197a9c1c9"
+  }
+}

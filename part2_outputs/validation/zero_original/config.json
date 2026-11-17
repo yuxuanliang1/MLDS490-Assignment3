@@ -1,0 +1,11 @@
+{
+  "rounds": 3,
+  "fraction": 0.1,
+  "epochs": 3,
+  "lr": 0.3,
+  "batch_size": 32,
+  "seed": 2026,
+  "device": "cuda:0",
+  "split_sha256": "",
+  "data_tag": "original_users_inverted_1_minus_x"
+}

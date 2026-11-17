@@ -1,0 +1,21 @@
+{
+  "accuracy": 0.7412317039491854,
+  "correct": 2684,
+  "n": 3621,
+  "loss": 0.986715894613237,
+  "test_source_sha256": "0df3082c14f7b62f6f5a264181fd7a243533f9463562f5986addf2f80b4060b2",
+  "selection_sha256": "e0b9e8e24d1d392dff8d83b774a785025cafcadc485d69543e9933bd7d7ef2e8",
+  "checkpoint_sha256": "4ef49cfcde9640c615e29f04a759a72c4e2f8c3d1c72fbd4a8b1956487b33f45",
+  "selected_round": 80,
+  "test_container_shape": [
+    1
+  ],
+  "image_shape": [
+    3621,
+    28,
+    28
+  ],
+  "image_dtype": "float32",
+  "label_dtype": "int32",
+  "note": "Single aggregate partition, not 100 per-user test sets. Opened only after selection frozen."
+}

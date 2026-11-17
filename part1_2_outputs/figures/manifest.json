@@ -1,0 +1,7 @@
+[
+  "ray_loss",
+  "ray_accuracy",
+  "sequential_parallel_accuracy",
+  "parallel_performance",
+  "actor_execution_timeline"
+]

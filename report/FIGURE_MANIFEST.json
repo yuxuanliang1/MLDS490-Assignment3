@@ -1,0 +1,172 @@
+[
+  {
+    "report_path": "figures/part1_1/seed_stability.pdf",
+    "source": "part1_1_deepdish5_outputs/figures/seed_stability.pdf",
+    "sha256": "8108e41d5c0dcfef6d832c214560026c175fc8d31193fd2a3c8d4a932d96e449"
+  },
+  {
+    "report_path": "figures/part1_1/accuracy_vs_client_epochs.pdf",
+    "source": "part1_1_deepdish5_outputs/figures/accuracy_vs_client_epochs.pdf",
+    "sha256": "f48abb1a846b941d60fbdad42e4594fd0c336255aa330a86f239ea223c90c379"
+  },
+  {
+    "report_path": "figures/part1_2/parallel_performance.pdf",
+    "source": "part1_2_outputs/figures/parallel_performance.pdf",
+    "sha256": "59ac1e51e561078ef2b126785addb64e80b832fc8e89cbd946fea0794c0b0133"
+  },
+  {
+    "report_path": "figures/part1_2/sequential_parallel_accuracy.pdf",
+    "source": "part1_2_outputs/figures/sequential_parallel_accuracy.pdf",
+    "sha256": "168ba0ebae8ed7eee8f308e10429b7d1a6d760369edcd5c62964675fe629d24b"
+  },
+  {
+    "report_path": "figures/part2/dp_accuracy_convergence.pdf",
+    "source": "part2_outputs/figures/dp_accuracy_convergence.pdf",
+    "sha256": "56d6673a8ef92871fc7fc7ab81464d10e67f0df09aca75be3ccc65f0a55eae83"
+  },
+  {
+    "report_path": "figures/part2/dp_accuracy_vs_noise_scale.pdf",
+    "source": "part2_outputs/figures/dp_accuracy_vs_noise_scale.pdf",
+    "sha256": "fb371d65e3ba25b4c99b644655837abd70fe269017e1c78b26ce6c8da20ba95f"
+  },
+  {
+    "report_path": "figures/part2/dp_image_perturbations.pdf",
+    "source": "part2_outputs/figures/dp_image_perturbations.pdf",
+    "sha256": "1186e8637574ccc9fec2efc4edfd691d12bf663f26548fffbfcff5b87bfb6fbf"
+  },
+  {
+    "report_path": "figures/part2/dp_loss_convergence.pdf",
+    "source": "part2_outputs/figures/dp_loss_convergence.pdf",
+    "sha256": "b2a836cc9eb60998daca606075ee9128a4aa327a843bd99e738cd186488504d1"
+  },
+  {
+    "report_path": "figures/part2/dp_noise_distribution_validation.pdf",
+    "source": "part2_outputs/figures/dp_noise_distribution_validation.pdf",
+    "sha256": "fb1b5524809899a57c69e4c6e4148c8361065edfa4f96a409881f3d52bd81fc2"
+  },
+  {
+    "report_path": "figures/part2/dp_noise_seed_stability.pdf",
+    "source": "part2_outputs/figures/dp_noise_seed_stability.pdf",
+    "sha256": "62fba5819799862f726c427a02ea5aa28ed4ac3e88ed90d260a42aac72879f7f"
+  },
+  {
+    "report_path": "figures/part2/dp_privacy_utility_tradeoff.pdf",
+    "source": "part2_outputs/figures/dp_privacy_utility_tradeoff.pdf",
+    "sha256": "9169d091c609c6c334fc4bde76115f4f410f4879568cc3ca840a5729df353087"
+  },
+  {
+    "report_path": "figures/part1_1/overall_class_distribution.png",
+    "source_data": [
+      "part1_1_deepdish5_outputs/analysis/class_counts.json"
+    ],
+    "source_hashes": {
+      "part1_1_deepdish5_outputs/analysis/class_counts.json": "2f539f45fcb01dac8cadbec5abee25bcc1c5f9daffc49452429264e8022b90dd"
+    },
+    "sha256": "2d5243868f376491ba0694a105a3b1fcf80df51dcbe8d7c2aad9ae49cc4d4801",
+    "operation": "Presentation-only regeneration from saved numerical results"
+  },
+  {
+    "report_path": "figures/part1_1/five_client_distributions.png",
+    "source_data": [
+      "part1_1_deepdish5_outputs/analysis/class_counts.json",
+      "part1_1_deepdish5_outputs/analysis/dataset_summary.json"
+    ],
+    "source_hashes": {
+      "part1_1_deepdish5_outputs/analysis/class_counts.json": "2f539f45fcb01dac8cadbec5abee25bcc1c5f9daffc49452429264e8022b90dd",
+      "part1_1_deepdish5_outputs/analysis/dataset_summary.json": "cdd412682784fc45260f0c6f044e86867618c39607cf3f8aa4129bd760bbdaa6"
+    },
+    "sha256": "aab8f10f0b02fa40e8831c54e9e0fdb657288f3de048d3683126289bd6474560",
+    "operation": "Presentation-only regeneration from saved numerical results"
+  },
+  {
+    "report_path": "figures/part1_1/baseline_convergence.png",
+    "source_data": [
+      "part1_1_deepdish5_outputs/experiments/c10_e1_s2026/history.csv"
+    ],
+    "source_hashes": {
+      "part1_1_deepdish5_outputs/experiments/c10_e1_s2026/history.csv": "49bf268b42b906144861f72d8ac9a07bdd9a169f032027f35d3cbe4098150375"
+    },
+    "sha256": "adb46d111f8471966145f91fe2ebaa5d29bbd560f83136ee2f182e616e935b2c",
+    "operation": "Presentation-only regeneration from saved numerical results"
+  },
+  {
+    "report_path": "figures/part1_1/participation_heterogeneity_benefit.png",
+    "source_data": [
+      "part1_1_deepdish5_outputs/validation/client_benefits.csv"
+    ],
+    "source_hashes": {
+      "part1_1_deepdish5_outputs/validation/client_benefits.csv": "30a3d010636747764e355272bf6e016a5f8d88720c9e51fd91f7da1ad233f7fc"
+    },
+    "sha256": "7ff5f317aab258cd872dccc66405a8195bf77083cadf941c785a197219fe856e",
+    "operation": "Presentation-only regeneration from saved numerical results"
+  },
+  {
+    "report_path": "figures/part1_1/hyperparameter_accuracy.png",
+    "source_data": [
+      "part1_1_deepdish5_outputs/experiments/c02_e1_s2026/history.csv",
+      "part1_1_deepdish5_outputs/experiments/c02_e3_s2026/history.csv",
+      "part1_1_deepdish5_outputs/experiments/c05_e1_s2026/history.csv",
+      "part1_1_deepdish5_outputs/experiments/c05_e3_s2026/history.csv",
+      "part1_1_deepdish5_outputs/experiments/c10_e1_s2026/history.csv",
+      "part1_1_deepdish5_outputs/experiments/c10_e3_s2026/history.csv"
+    ],
+    "source_hashes": {
+      "part1_1_deepdish5_outputs/experiments/c02_e1_s2026/history.csv": "b9b3ca54b73a50f0d7434de0fd4fe6c63a1e8430b03cfb84ff893b724d7ef735",
+      "part1_1_deepdish5_outputs/experiments/c02_e3_s2026/history.csv": "5e8b7042fbc9eddcb1635444899876da9f33d9ed820b1f3776c3a036218dea53",
+      "part1_1_deepdish5_outputs/experiments/c05_e1_s2026/history.csv": "7e191d1b4c36f46a4c3665f8d69721894b9539aec3461384991ec40ab695607a",
+      "part1_1_deepdish5_outputs/experiments/c05_e3_s2026/history.csv": "f8742206f48a192d73abe12dc074966a33d7908bb3cc2318ae319f736e426431",
+      "part1_1_deepdish5_outputs/experiments/c10_e1_s2026/history.csv": "49bf268b42b906144861f72d8ac9a07bdd9a169f032027f35d3cbe4098150375",
+      "part1_1_deepdish5_outputs/experiments/c10_e3_s2026/history.csv": "2ea3e1f81b049b0482e94a5579eda241885b1afec1e285d7adeb0afdd8a1177b"
+    },
+    "sha256": "28f2148f0bbe9fb0baadfb47dcadb5cc57d13a40b240f8a70eed0a45b742118d",
+    "operation": "Presentation-only regeneration from saved numerical results"
+  },
+  {
+    "report_path": "figures/part1_1/scientific_controls.png",
+    "source_data": [
+      "part1_1_deepdish5_outputs/validation/randomized_homogeneous/history.csv",
+      "part1_1_deepdish5_outputs/validation/label_sorted_heterogeneous/history.csv"
+    ],
+    "source_hashes": {
+      "part1_1_deepdish5_outputs/validation/randomized_homogeneous/history.csv": "945580d3f8fabdb66ec9c284e922388032afb2ff819b53d7701c5a02cf27a32d",
+      "part1_1_deepdish5_outputs/validation/label_sorted_heterogeneous/history.csv": "a4e62ce12a205ccf69398cd3b6738bfd8ab8a886029d8700fa693d27abeaeb6a"
+    },
+    "sha256": "9f0659c9da3dc60a94db7e2b7e21722f9b9b97c133ebdaaf71a8d79e20b53019",
+    "operation": "Presentation-only regeneration from saved numerical results"
+  },
+  {
+    "report_path": "figures/part1_2/ray_convergence.png",
+    "source_data": [
+      "part1_2_outputs/parallel/history.csv"
+    ],
+    "source_hashes": {
+      "part1_2_outputs/parallel/history.csv": "41bced104407a0b3c16165507d68235547914da699ebf2363b0082ed495f182c"
+    },
+    "sha256": "996ef2cb6e1762b21555c10ee2bdd09dd96f8a45ec59ac590435681652407939",
+    "operation": "Presentation-only regeneration from saved numerical results"
+  },
+  {
+    "report_path": "figures/part1_2/actor_execution_timeline.png",
+    "source_data": [
+      "part1_2_outputs/parallel/events.csv",
+      "part1_2_outputs/parallel/timings.csv"
+    ],
+    "source_hashes": {
+      "part1_2_outputs/parallel/events.csv": "2c6c254c549332fa36f6a7ecea9a7a2ec68b7df350d1da7741db45480229dfe9",
+      "part1_2_outputs/parallel/timings.csv": "4c62193d09b9a860560a47056ae90b54769dba43d0b9f4784a591d3dcab42bb3"
+    },
+    "sha256": "52514cb994cb6295c9801c5b57eb95665a1aeacf74f887d4c7b5d9a5adc4e693",
+    "operation": "Presentation-only regeneration from saved numerical results"
+  },
+  {
+    "report_path": "figures/part2/dp_client_robustness_heatmap.png",
+    "source_data": [
+      "part2_outputs/client_robustness.csv"
+    ],
+    "source_hashes": {
+      "part2_outputs/client_robustness.csv": "7415ea62226c05d2736a94130b0b6a27b10cd137355003afa17fd5b1cce4eba7"
+    },
+    "sha256": "59778b26889712dc7790a9bf9e27769990069bb2769bcb732212b692a462107e",
+    "operation": "Presentation-only regeneration from saved numerical results"
+  }
+]

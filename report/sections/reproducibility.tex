@@ -1,0 +1,25 @@
+\section{Code Availability and Reproducibility}\label{sec:reproduction}
+The source code, experiment configurations, and reproduction instructions are available at \url{https://github.com/yuxuanliang1/MLDS490-Assignment3}.
+
+Run commands from the repository root. Place the instructor-provided \texttt{train\_data.npy} and \texttt{test\_data.npy} in \path{Assignment3-data/}, and reuse \path{part1_1_deepdish5_outputs/splits.json} for matched experiments. Dependencies are PyTorch, NumPy, Matplotlib, psutil (7.2.2), and Ray (2.60.0); the tested versions and hardware are given in \cref{sec:methodology}. The GPU experiments require a compatible CUDA build.
+
+\Cref{app:reproduction} gives the ordered setup, training, selection, and test commands for each part. The principal scientific validation entry points are:
+\begin{lstlisting}[language=bash]
+cd MLDS490-Assignment3
+python -m part1_1.run_tests
+python -m part1_1 validate --device cuda:0
+python -m part1_2.workflow validate
+python -m part1_2.extra_validation
+python -m part2.workflow math --device cuda:0
+python -m part2.workflow science --device cuda:0
+\end{lstlisting}
+Part 1.1 covers algebraic, sampling, learning, and partition controls; Ray covers equivalence, benchmarks, and failure recovery; Part 2 covers the noise law, baseline recovery, ablations, and stress tests. Part 2's full zero-noise validation requires the completed Part 1.1 runs. Ray's validation includes GPU benchmarking even though CPU Actors are selected.
+
+Completed results are stored under \path{part1_1_deepdish5_outputs/}, \path{part1_2_outputs/}, and \path{part2_outputs/}. Figures can be regenerated without training:
+\begin{lstlisting}[language=bash]
+python -m part1_1 plots
+python -m part1_2.workflow artifacts
+python -m part2.workflow artifacts
+python report/tools/regenerate_figures.py
+\end{lstlisting}
+The final command renders the report-sized plots from saved numerical outputs. The image-distortion panel also requires development images. Completed runs and frozen test evaluations are cached; use a separate output/project copy for a fresh repetition. The \texttt{run\_server.sh} and \texttt{finalize\_server.sh} launchers contain DeepDish5-specific configuration; consult the corresponding repository README before using them on another host.

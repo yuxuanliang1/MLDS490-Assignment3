@@ -1,0 +1,58 @@
+[
+  {
+    "b": 0.0,
+    "mean_squared_distortion": 0.0,
+    "rms_distortion": 0.0,
+    "mean_outside_unit_fraction": 0.0,
+    "ink_signal_power": 0.026523285149481803,
+    "ink_snr_db": null
+  },
+  {
+    "b": 0.025,
+    "mean_squared_distortion": 0.0012506039031248213,
+    "rms_distortion": 0.0353638785079468,
+    "mean_outside_unit_fraction": 0.46605340036739135,
+    "ink_signal_power": 0.026523285149481803,
+    "ink_snr_db": 13.265075345993484
+  },
+  {
+    "b": 0.05,
+    "mean_squared_distortion": 0.0050015577871703595,
+    "rms_distortion": 0.07072169247953812,
+    "mean_outside_unit_fraction": 0.4710301057711523,
+    "ink_signal_power": 0.026523285149481803,
+    "ink_snr_db": 7.245220234389792
+  },
+  {
+    "b": 0.1,
+    "mean_squared_distortion": 0.020002776411486983,
+    "rms_distortion": 0.14143117199361316,
+    "mean_outside_unit_fraction": 0.4762886794287943,
+    "ink_signal_power": 0.026523285149481803,
+    "ink_snr_db": 1.2253703388662696
+  },
+  {
+    "b": 0.2,
+    "mean_squared_distortion": 0.08002751804134925,
+    "rms_distortion": 0.282891353776232,
+    "mean_outside_unit_fraction": 0.4861884441784728,
+    "ink_signal_power": 0.026523285149481803,
+    "ink_snr_db": -4.796120335983077
+  },
+  {
+    "b": 0.4,
+    "mean_squared_distortion": 0.32011341180729663,
+    "rms_distortion": 0.5657856588915069,
+    "mean_outside_unit_fraction": 0.5314817350548008,
+    "ink_signal_power": 0.026523285149481803,
+    "ink_snr_db": -10.816765558067669
+  },
+  {
+    "b": 0.8,
+    "mean_squared_distortion": 1.2797689002966635,
+    "rms_distortion": 1.1312687126835355,
+    "mean_outside_unit_fraction": 0.6391742800166725,
+    "ink_signal_power": 0.026523285149481803,
+    "ink_snr_db": -16.83504237782034
+  }
+]

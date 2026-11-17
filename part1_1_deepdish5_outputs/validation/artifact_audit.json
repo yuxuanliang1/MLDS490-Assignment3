@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "audited_main_and_repeat_runs": 10,
+  "all_server_host_and_gpu_verified": true,
+  "split_counts_verified": true,
+  "all_rounds_and_full_pool_counts_verified": true,
+  "all_selection_weights_verified": true,
+  "all_best_checkpoints_match_validation_criteria": true,
+  "runs": [
+    {
+      "name": "c02_e1_s2026",
+      "rounds": 80,
+      "selections": 160,
+      "best_round": 78,
+      "examples_seen": 40949
+    },
+    {
+      "name": "c02_e3_s2026",
+      "rounds": 80,
+      "selections": 160,
+      "best_round": 77,
+      "examples_seen": 122847
+    },
+    {
+      "name": "c05_e1_s2026",
+      "rounds": 80,
+      "selections": 400,
+      "best_round": 80,
+      "examples_seen": 102161
+    },
+    {
+      "name": "c05_e3_s2026",
+      "rounds": 80,
+      "selections": 400,
+      "best_round": 78,
+      "examples_seen": 306483
+    },
+    {
+      "name": "c10_e1_s2026",
+      "rounds": 80,
+      "selections": 800,
+      "best_round": 78,
+      "examples_seen": 203782
+    },
+    {
+      "name": "c10_e3_s2026",
+      "rounds": 80,
+      "selections": 800,
+      "best_round": 80,
+      "examples_seen": 611346
+    },
+    {
+      "name": "c10_e3_s2027",
+      "rounds": 80,
+      "selections": 800,
+      "best_round": 78,
+      "examples_seen": 607347
+    },
+    {
+      "name": "c10_e3_s2028",
+      "rounds": 80,
+      "selections": 800,
+      "best_round": 77,
+      "examples_seen": 604653
+    },
+    {
+      "name": "c05_e3_s2027",
+      "rounds": 80,
+      "selections": 400,
+      "best_round": 72,
+      "examples_seen": 308757
+    },
+    {
+      "name": "c05_e3_s2028",
+      "rounds": 80,
+      "selections": 400,
+      "best_round": 75,
+      "examples_seen": 309396
+    }
+  ]
+}

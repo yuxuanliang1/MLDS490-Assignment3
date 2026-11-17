@@ -1,0 +1,4 @@
+\section{Conclusion}\label{sec:conclusion}
+Sequential FedAvg achieves 74.12\% held-out accuracy, with aggregation and centralized-SGD checks agreeing to float32 precision. Label randomization and controlled heterogeneity produce large, interpretable changes in validation accuracy. Ray preserves the matched CPU trajectory and executes four clients concurrently in every round, but lifecycle overhead makes this workload approximately 23.1 times slower than sequential execution.
+
+Fixed Laplace perturbation reduces clean utility as scale increases. The largest tested positive scale causing no more than a two-percentage-point decrease in mean final validation accuracy is $b=0.05$: validation accuracy decreases from 72.40\% to 71.80\%, and mean round-80 test accuracy is 72.66\%. Distribution, zero-noise, and recovery checks validate the implemented experiment; an end-to-end privacy guarantee still requires the formal analysis outlined above.

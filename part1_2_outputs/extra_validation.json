@@ -1,0 +1,20 @@
+{
+  "unavailable_gpu": {
+    "reported": "GetTimeoutError",
+    "cpus_returned": 4.0
+  },
+  "tiny_missing_classes": {
+    "sizes": [
+      1,
+      2,
+      7,
+      13
+    ],
+    "parameter_difference": 0.0
+  },
+  "replay_and_repeat": {
+    "parameter_difference": 0.0,
+    "input_unchanged": true
+  },
+  "passed": true
+}

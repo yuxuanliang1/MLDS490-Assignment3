@@ -1,0 +1,618 @@
+[
+  {
+    "test": "A_Laplace_distribution",
+    "hypothesis": "IID Laplace draws have the specified moments, tails and quantiles",
+    "setup": "1,000,000 draws per scale .025,.1,.8; float32 samples, float64 statistics",
+    "expected": "All moment, quantile and tail deviations within 6 approximate sampling SE",
+    "observed": [
+      {
+        "b": 0.025,
+        "n": 1000000,
+        "mean": -1.2865619232815125e-05,
+        "variance": 0.0012485096783031485,
+        "theoretical_variance": 0.0012500000000000002,
+        "mean_absolute": 0.024960219558961768,
+        "quantile_probabilities": [
+          0.01,
+          0.1,
+          0.25,
+          0.5,
+          0.75,
+          0.9,
+          0.99
+        ],
+        "empirical_quantiles": [
+          -0.09795591190457344,
+          -0.0402015957981348,
+          -0.01728019444271922,
+          -6.109117521191365e-06,
+          0.017241950146853924,
+          0.04020179733633995,
+          0.09769735485315323
+        ],
+        "theoretical_quantiles": [
+          -0.09780057513570366,
+          -0.04023594781085251,
+          -0.01732867951399863,
+          -0.0,
+          0.01732867951399863,
+          0.04023594781085252,
+          0.09780057513570363
+        ],
+        "tail_probability": 0.04971,
+        "standard_errors": {
+          "mean_z": 0.3638946641475056,
+          "variance_z": 0.5331936996005203,
+          "absolute_mean_z": 1.5912176415293355,
+          "max_quantile_z": 2.0029289387057143,
+          "tail_z": 0.35432958558478206
+        }
+      },
+      {
+        "b": 0.1,
+        "n": 1000000,
+        "mean": 1.731379619797663e-05,
+        "variance": 0.019973362190983134,
+        "theoretical_variance": 0.020000000000000004,
+        "mean_absolute": 0.10002555193254649,
+        "quantile_probabilities": [
+          0.01,
+          0.1,
+          0.25,
+          0.5,
+          0.75,
+          0.9,
+          0.99
+        ],
+        "empirical_quantiles": [
+          -0.3901090794801712,
+          -0.1612955346703529,
+          -0.06924429535865784,
+          5.992302430968266e-05,
+          0.06928596831858158,
+          0.16118527203798294,
+          0.3896318602561951
+        ],
+        "theoretical_quantiles": [
+          -0.39120230054281463,
+          -0.16094379124341004,
+          -0.06931471805599453,
+          -0.0,
+          0.06931471805599453,
+          0.16094379124341007,
+          0.3912023005428145
+        ],
+        "tail_probability": 0.049737,
+        "standard_errors": {
+          "mean_z": 0.12242702699671137,
+          "variance_z": 0.5956395173337894,
+          "absolute_mean_z": 0.25551932546483136,
+          "max_quantile_z": 1.5783518746590146,
+          "tail_z": 0.23019436544257987
+        }
+      },
+      {
+        "b": 0.8,
+        "n": 1000000,
+        "mean": -0.00024117511784259277,
+        "variance": 1.2836539839934673,
+        "theoretical_variance": 1.2800000000000002,
+        "mean_absolute": 0.8009903429202121,
+        "quantile_probabilities": [
+          0.01,
+          0.1,
+          0.25,
+          0.5,
+          0.75,
+          0.9,
+          0.99
+        ],
+        "empirical_quantiles": [
+          -3.1325106596946717,
+          -1.2909656643867493,
+          -0.5548799484968185,
+          0.0004159624659223482,
+          0.5548042356967926,
+          1.2883132457733153,
+          3.1365076375007637
+        ],
+        "theoretical_quantiles": [
+          -3.129618404342517,
+          -1.2875503299472804,
+          -0.5545177444479562,
+          -0.0,
+          0.5545177444479562,
+          1.2875503299472806,
+          3.129618404342516
+        ],
+        "tail_probability": 0.04978,
+        "standard_errors": {
+          "mean_z": 0.21317070159995252,
+          "variance_z": 1.2766494684513263,
+          "absolute_mean_z": 1.2379286502650633,
+          "max_quantile_z": 1.4230560164453971,
+          "tail_z": 0.0324975333643288
+        }
+      }
+    ],
+    "passed": true,
+    "gating": true,
+    "interpretation": "Scale-invariant normalized moments agree with Laplace theory",
+    "limitations": "Normal/delta-method SE are approximate; multiple tests use conservative 6-SE bounds"
+  },
+  {
+    "test": "B_pixel_independence",
+    "hypothesis": "Distinct pixel streams have near-zero correlations",
+    "setup": "20,000 independently perturbed images; 496 pairs across 32 spread pixel positions",
+    "expected": "Maximum |r| < 6/sqrt(20000), matching shape 20000x28x28",
+    "observed": {
+      "max_abs_correlation": 0.020592284554336725,
+      "mean_correlation": -0.0001680184248325483,
+      "threshold": 0.04242640687119285,
+      "shape": [
+        20000,
+        28,
+        28
+      ]
+    },
+    "passed": true,
+    "gating": true,
+    "interpretation": "No material linear dependence detected across tested positions",
+    "limitations": "Correlation is not a proof of independence; generator algorithm supplies independence"
+  },
+  {
+    "test": "D_data_isolation",
+    "hypothesis": "Perturbation changes training pixels only",
+    "setup": "Hash every client training input/label and clean validation tensor; hash held-out FILE bytes without loading examples",
+    "expected": "All 100 clients retain original tensors, labels, validation and boundaries; test file hash unchanged",
+    "observed": {
+      "clients_checked": 100,
+      "all_checks": true,
+      "test_file_sha256": "0df3082c14f7b62f6f5a264181fd7a243533f9463562f5986addf2f80b4060b2"
+    },
+    "passed": true,
+    "gating": true,
+    "interpretation": "Original client-specific tensors are immutable inputs; aggregation imports unchanged parameter-only interface",
+    "limitations": "Shared-machine logical boundary is not a security sandbox"
+  },
+  {
+    "test": "C_zero_noise_equivalence",
+    "hypothesis": "b=0 preserves Part1.1 FedAvg exactly",
+    "setup": "Three real rounds; same architecture, weights, sampling, shuffle seeds, E3 LR.3 batch32, same GPU",
+    "expected": "Every recorded metric and final parameter equal bitwise",
+    "observed": {
+      "max_parameter_difference": 0.0,
+      "metric_differences": {
+        "train_loss": 0.0,
+        "validation_loss": 0.0,
+        "train_accuracy": 0.0,
+        "validation_accuracy": 0.0
+      },
+      "selections_equal": true
+    },
+    "passed": true,
+    "gating": true,
+    "interpretation": "New evaluation/noise plumbing does not change clean FedAvg",
+    "limitations": "Short check; all 80-round zero-noise runs are also compared with saved Part1.1 checkpoints later"
+  },
+  {
+    "test": "I_noise_reproducibility_and_edges",
+    "hypothesis": "Keyed CPU-generated noise transfers identically across devices",
+    "setup": "Repeat keys, vary experiment seed/client ID, copy b0, reject negative/nonfinite scales and overflowing float32 samples",
+    "expected": "Identical same keys and CPU/GPU; different seeds/clients differ; invalid inputs explicitly fail",
+    "observed": {
+      "cpu_gpu_max_difference": 0.0,
+      "repeat_equal": true,
+      "different_seed": true,
+      "different_client": true,
+      "zero_copy_equal": true,
+      "zero_copy_distinct": true,
+      "invalid_rejected": [
+        "-1.0",
+        "nan",
+        "inf"
+      ],
+      "overflow_rejected": true,
+      "nonfinite_input_rejected": true
+    },
+    "passed": true,
+    "gating": true,
+    "interpretation": "Noise RNG is independent of model, sampling and shuffle RNGs; b=0 takes a clone-only path",
+    "limitations": "CPU generation is deliberate; does not claim identical native CUDA PRNG algorithms"
+  },
+  {
+    "test": "C_full_zero_control",
+    "hypothesis": "Full no-noise trajectories reproduce saved Part1.1 results",
+    "setup": "Compare all 81 metric rows, 800 selections and round80 parameters for three seeds",
+    "expected": "Bitwise zero differences",
+    "observed": [
+      {
+        "seed": 2026,
+        "max_parameter_difference": 0.0,
+        "max_metric_difference": 0.0,
+        "selections_equal": true
+      },
+      {
+        "seed": 2027,
+        "max_parameter_difference": 0.0,
+        "max_metric_difference": 0.0,
+        "selections_equal": true
+      },
+      {
+        "seed": 2028,
+        "max_parameter_difference": 0.0,
+        "max_metric_difference": 0.0,
+        "selections_equal": true
+      }
+    ],
+    "passed": true,
+    "gating": true,
+    "interpretation": "Validates full-run reuse across noise plumbing",
+    "limitations": "Identical software/GPU architecture required for bitwise agreement"
+  },
+  {
+    "test": "E_controlled_noise_degradation",
+    "hypothesis": "Increasing training noise weakens learning a small spatial signal",
+    "setup": "20 synthetic clients, 480 train/160 validation, three seeds, b0/.2/2, 30 rounds E1 LR.1",
+    "expected": "Compare seed-averaged validation, without requiring each run to decrease monotonically",
+    "observed": [
+      {
+        "seed": 371,
+        "b": 0.0,
+        "validation": 1.0,
+        "finite": true
+      },
+      {
+        "seed": 371,
+        "b": 0.2,
+        "validation": 1.0,
+        "finite": true
+      },
+      {
+        "seed": 371,
+        "b": 2.0,
+        "validation": 1.0,
+        "finite": true
+      },
+      {
+        "seed": 372,
+        "b": 0.0,
+        "validation": 1.0,
+        "finite": true
+      },
+      {
+        "seed": 372,
+        "b": 0.2,
+        "validation": 1.0,
+        "finite": true
+      },
+      {
+        "seed": 372,
+        "b": 2.0,
+        "validation": 1.0,
+        "finite": true
+      },
+      {
+        "seed": 373,
+        "b": 0.0,
+        "validation": 1.0,
+        "finite": true
+      },
+      {
+        "seed": 373,
+        "b": 0.2,
+        "validation": 1.0,
+        "finite": true
+      },
+      {
+        "seed": 373,
+        "b": 2.0,
+        "validation": 1.0,
+        "finite": true
+      }
+    ],
+    "passed": true,
+    "gating": false,
+    "interpretation": "Measured controlled responses are reported rather than assuming monotonic accuracy",
+    "limitations": "Synthetic signal and small sample size differ from real handwriting"
+  },
+  {
+    "test": "I_training_reproducibility",
+    "hypothesis": "Same seed reproduces positive-noise training",
+    "setup": "Two independent fixed b=.1 datasets and five-round runs",
+    "expected": "Exactly equal parameters and recorded metrics",
+    "observed": {
+      "max_parameter_difference": 0.0,
+      "history_metrics_equal": true
+    },
+    "passed": true,
+    "gating": true,
+    "interpretation": "Fixed noise and keyed local/sampling streams permit deterministic replay",
+    "limitations": "Only one positive noise scale is independently repeated"
+  },
+  {
+    "test": "J_fixed_vs_resampled",
+    "hypothesis": "Fresh per-epoch noise changes the optimization distribution",
+    "setup": "Matched real data, same 40 rounds E3 LR.3 batch32 and sampling for b=.1,.4",
+    "expected": "Quantify difference; no universal ordering assumed",
+    "observed": [
+      {
+        "b": 0.1,
+        "convention": "fixed",
+        "final_validation": 0.6480412049321055,
+        "best_validation": 0.6530357421570158
+      },
+      {
+        "b": 0.1,
+        "convention": "resampled",
+        "final_validation": 0.6583424379584829,
+        "best_validation": 0.6614640237240518
+      },
+      {
+        "b": 0.4,
+        "convention": "fixed",
+        "final_validation": 0.550803808334634,
+        "best_validation": 0.550803808334634
+      },
+      {
+        "b": 0.4,
+        "convention": "resampled",
+        "final_validation": 0.6015295770251288,
+        "best_validation": 0.6077727485562666
+      }
+    ],
+    "passed": true,
+    "gating": false,
+    "interpretation": "This is a separate stochastic-training ablation and excluded from the primary fixed-noise/test grid",
+    "limitations": "One seed and 40 rounds; no formal privacy accounting"
+  },
+  {
+    "test": "H_high_noise_stability",
+    "hypothesis": "Large perturbations may degrade numerical stability and useful confidence",
+    "setup": "One real small client, 3 local epochs, scales up to1e6 (stress only); parameter hooks inspect gradients; no clipping",
+    "expected": "Record finite deterioration or explicit rejection, never replace a failed update",
+    "observed": [
+      {
+        "b": 1e-12,
+        "status": "finite",
+        "max_abs_pixel": 1.0,
+        "max_abs_gradient": 0.1417524516582489,
+        "validation_loss": 3.800309499104818,
+        "validation_accuracy": 0.041666666666666664,
+        "mean_prediction_confidence": 0.1256873905658722
+      },
+      {
+        "b": 1.6,
+        "status": "finite",
+        "max_abs_pixel": 17.887428283691406,
+        "max_abs_gradient": 0.2442828118801117,
+        "validation_loss": 3.939697583516439,
+        "validation_accuracy": 0.08333333333333333,
+        "mean_prediction_confidence": 0.027346795424818993
+      },
+      {
+        "b": 3.2,
+        "status": "finite",
+        "max_abs_pixel": 40.71889114379883,
+        "max_abs_gradient": 3.770695686340332,
+        "validation_loss": 4.162240346272786,
+        "validation_accuracy": 0.0,
+        "mean_prediction_confidence": 0.018869390711188316
+      },
+      {
+        "b": 10.0,
+        "status": "finite",
+        "max_abs_pixel": 127.80247497558594,
+        "max_abs_gradient": 10713.5263671875,
+        "validation_loss": 1193857.1666666667,
+        "validation_accuracy": 0.0,
+        "mean_prediction_confidence": 1.0
+      },
+      {
+        "b": 100.0,
+        "status": "finite",
+        "max_abs_pixel": 1104.97412109375,
+        "max_abs_gradient": 11215191408640.0,
+        "validation_loss": 9.028997277417415e+22,
+        "validation_accuracy": 0.0,
+        "mean_prediction_confidence": 0.8773738741874695
+      },
+      {
+        "b": 1000.0,
+        "status": "explicit_failure",
+        "error": "Non-finite local loss, client 25",
+        "max_abs_pixel": 12538.2060546875
+      },
+      {
+        "b": 1000000.0,
+        "status": "explicit_failure",
+        "error": "Non-finite local loss, client 25",
+        "max_abs_pixel": 10642062.0
+      }
+    ],
+    "passed": true,
+    "gating": false,
+    "interpretation": "High-noise failures are retained; finite softmax confidence alone does not establish predictive quality",
+    "limitations": "Local stress test is not a full large-b FedAvg trajectory"
+  },
+  {
+    "test": "edge_tiny_and_resume",
+    "hypothesis": "Missing classes, size imbalance and interrupted runs remain well-defined",
+    "setup": "Synthetic clients n=0,1,2,7,101,23,3,9,11,13, class0 only; one-round stop/resume",
+    "expected": "9 eligible clients; resumed/uninterrupted parameters equal",
+    "observed": {
+      "eligible_clients": 9,
+      "max_resumption_difference": 0.0
+    },
+    "passed": true,
+    "gating": true,
+    "interpretation": "Empty clients are ineligible; tiny nonempty clients keep their original samples and missing classes",
+    "limitations": "These are synthetic stress fixtures, not observed empty real clients"
+  },
+  {
+    "test": "G_client_noise_sensitivity",
+    "hypothesis": "Federated clients may lose unequal utility under perturbation",
+    "setup": "100 original clients; per-seed final validation differences relative to matching b0, averaged over three seeds",
+    "expected": "Quantify changes and associations; no causal/pass threshold for correlations",
+    "observed": {
+      "correlations": [
+        {
+          "b": 0.1,
+          "pearson_correlations": {
+            "train_n": -0.03846247939931159,
+            "entropy_bits": -0.23046900764447376,
+            "observed_classes": -0.27921538325724027
+          },
+          "quartile_changes": {
+            "train_n": {
+              "bottom_quartile_change": -0.025658805391643173,
+              "top_quartile_change": -0.02516720943791186
+            },
+            "entropy_bits": {
+              "bottom_quartile_change": -0.016278481075908305,
+              "top_quartile_change": -0.02710487622441998
+            }
+          }
+        },
+        {
+          "b": 0.8,
+          "pearson_correlations": {
+            "train_n": -0.17430943450534153,
+            "entropy_bits": 0.09252019731956662,
+            "observed_classes": -0.14768090355511415
+          },
+          "quartile_changes": {
+            "train_n": {
+              "bottom_quartile_change": -0.3459951482472458,
+              "top_quartile_change": -0.39224432531080483
+            },
+            "entropy_bits": {
+              "bottom_quartile_change": -0.37121126690822115,
+              "top_quartile_change": -0.36352035000906163
+            }
+          }
+        }
+      ],
+      "largest_degradations": {
+        "0.1": [
+          {
+            "client_id": 72,
+            "mean_change": -0.08928571428571426,
+            "train_n": 223,
+            "entropy_bits": 5.020948880141732,
+            "observed_classes": 51
+          },
+          {
+            "client_id": 43,
+            "mean_change": -0.06451612903225808,
+            "train_n": 244,
+            "entropy_bits": 5.233936831075433,
+            "observed_classes": 55
+          },
+          {
+            "client_id": 41,
+            "mean_change": -0.06432748538011694,
+            "train_n": 228,
+            "entropy_bits": 5.126967971137422,
+            "observed_classes": 51
+          }
+        ],
+        "0.8": [
+          {
+            "client_id": 27,
+            "mean_change": -0.6833333333333335,
+            "train_n": 156,
+            "entropy_bits": 4.682227515231736,
+            "observed_classes": 40
+          },
+          {
+            "client_id": 23,
+            "mean_change": -0.5666666666666668,
+            "train_n": 237,
+            "entropy_bits": 5.09908513577359,
+            "observed_classes": 48
+          },
+          {
+            "client_id": 43,
+            "mean_change": -0.5268817204301075,
+            "train_n": 244,
+            "entropy_bits": 5.233936831075433,
+            "observed_classes": 55
+          }
+        ]
+      }
+    },
+    "passed": true,
+    "gating": false,
+    "interpretation": "The heatmap orders clients by fixed training-label entropy; size/diversity associations are observational",
+    "limitations": "Small local validation samples and writer/class differences confound associations; no causal or formal privacy interpretation"
+  },
+  {
+    "test": "F_image_distortion",
+    "hypothesis": "Independent pixel noise obscures ink at increasing scale",
+    "setup": "Actual per-pixel perturbation MSE and range violations from all 21 fixed datasets; display four fixed training images with shared [0,1] display scale",
+    "expected": "MSE near 2b^2; noise and out-of-range values remain unmodified in training",
+    "observed": [
+      {
+        "b": 0.0,
+        "mean_squared_distortion": 0.0,
+        "rms_distortion": 0.0,
+        "mean_outside_unit_fraction": 0.0,
+        "ink_signal_power": 0.026523285149481803,
+        "ink_snr_db": null
+      },
+      {
+        "b": 0.025,
+        "mean_squared_distortion": 0.0012506039031248213,
+        "rms_distortion": 0.0353638785079468,
+        "mean_outside_unit_fraction": 0.46605340036739135,
+        "ink_signal_power": 0.026523285149481803,
+        "ink_snr_db": 13.265075345993484
+      },
+      {
+        "b": 0.05,
+        "mean_squared_distortion": 0.0050015577871703595,
+        "rms_distortion": 0.07072169247953812,
+        "mean_outside_unit_fraction": 0.4710301057711523,
+        "ink_signal_power": 0.026523285149481803,
+        "ink_snr_db": 7.245220234389792
+      },
+      {
+        "b": 0.1,
+        "mean_squared_distortion": 0.020002776411486983,
+        "rms_distortion": 0.14143117199361316,
+        "mean_outside_unit_fraction": 0.4762886794287943,
+        "ink_signal_power": 0.026523285149481803,
+        "ink_snr_db": 1.2253703388662696
+      },
+      {
+        "b": 0.2,
+        "mean_squared_distortion": 0.08002751804134925,
+        "rms_distortion": 0.282891353776232,
+        "mean_outside_unit_fraction": 0.4861884441784728,
+        "ink_signal_power": 0.026523285149481803,
+        "ink_snr_db": -4.796120335983077
+      },
+      {
+        "b": 0.4,
+        "mean_squared_distortion": 0.32011341180729663,
+        "rms_distortion": 0.5657856588915069,
+        "mean_outside_unit_fraction": 0.5314817350548008,
+        "ink_signal_power": 0.026523285149481803,
+        "ink_snr_db": -10.816765558067669
+      },
+      {
+        "b": 0.8,
+        "mean_squared_distortion": 1.2797689002966635,
+        "rms_distortion": 1.1312687126835355,
+        "mean_outside_unit_fraction": 0.6391742800166725,
+        "ink_signal_power": 0.026523285149481803,
+        "ink_snr_db": -16.83504237782034
+      }
+    ],
+    "passed": true,
+    "gating": false,
+    "interpretation": "Ink-energy SNR uses signal 1-X to avoid white-background energy dominating the ratio; display saturation is not training clipping",
+    "limitations": "Images and distortion demonstrate information loss but do not measure a privacy parameter"
+  }
+]

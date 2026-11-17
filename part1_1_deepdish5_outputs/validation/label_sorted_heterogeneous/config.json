@@ -1,0 +1,11 @@
+{
+  "rounds": 40,
+  "fraction": 0.1,
+  "epochs": 3,
+  "lr": 0.3,
+  "batch_size": 32,
+  "seed": 2026,
+  "device": "cuda:0",
+  "split_sha256": "d28950c5a5e41dbfbf526bedd75d3dfae198cbbdca439c88938995f8b6f0ccc9",
+  "data_tag": "label_sorted_heterogeneous"
+}

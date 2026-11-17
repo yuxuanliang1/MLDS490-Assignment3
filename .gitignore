@@ -1,0 +1,74 @@
+# Instructor data and client copies
+/Assignment3-data/
+*.npy
+*.npz
+/part1_2_outputs/clients/
+# Environments, credentials, caches, and editor files
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+.ssh/
+.aws/
+*.pem
+*.key
+*credentials*
+.vscode/
+.idea/
+tmp/
+*.tmp
+*.bak
+*~
+*.swp
+*.lock
+# Transfer archives and exploratory outputs
+*.tar.gz
+*.tgz
+*.zip
+/part1_1_outputs/
+# Course materials
+/references/*
+!/references/README.md
+# TeX build products (retain source and PDF/PNG figures)
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+# Redundant checkpoints; selected small models retained
+*.pt
+!/part1_1_deepdish5_outputs/experiments/c10_e3_s2026/best.pt
+!/part1_2_outputs/parallel/best.pt
+!/part2_outputs/experiments/b0.05_s2026/last.pt
+# Personal machine metadata and historical snapshots
+**/environment.json
+**/source_manifest.json
+**/protected_snapshot.json
+**/local_preservation_snapshot.json
+**/logs/
+**/qa/
+**/inspection/
+**/nvidia*.txt
+/part1_2_outputs/validation.json
+/part1_2_outputs/benchmarks.json
+/part1_2_outputs/parallel/timings.csv
+/part1_2_outputs/pilot/timings.csv
+# Historical launchers contain personal server paths
+/part1_1/*.sh
+/part1_2/*.sh
+/part2/*.sh
+
+# Sanitized public derivatives are intentionally included.
+!/public_evidence/**
